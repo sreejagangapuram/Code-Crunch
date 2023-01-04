@@ -1,7 +1,7 @@
 ## The Reunion Project
 
 Agile Methodology
-What we wish to exceed and be able to create a platoform of communtive expression through delivering quality features of value and importance. Fostering a culture of inclusion and be able to understand and implement a finished product and individuals features that play to the strengths of our group and create an atmosphere where everyone is free and desrires to contribute their own ideas without fear of judgement. Through creating a culture of colaboration we will be able to create an enviroment in which all particpate equally and deliver quality work to the best of the ability.  
+<br>What we wish to exceed and be able to create a platoform of communtive expression through delivering quality features of value and importance. Fostering a culture of inclusion and be able to understand and implement a finished product and individuals features that play to the strengths of our group and create an atmosphere where everyone is free and desrires to contribute their own ideas without fear of judgement. Through creating a culture of colaboration we will be able to create an enviroment in which all particpate equally and deliver quality work to the best of the ability.  
 
 Usage
 
