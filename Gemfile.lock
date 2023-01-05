@@ -274,6 +274,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-commonmark-ghpages
   nokogiri
   rack (~> 2.2.4)
   rspec
