@@ -1,5 +1,5 @@
-## Housing Overview
-> Sleeps 48 people. Verify your housing assignment at the reunion with Jeremiah and Melissa in case there are last minute changes.
+## Project Plan/ Assignment
+> A record of our ideas and brainstorming for the project, and assignments given to different members of the team. Also included in github pages issues.
  
 > Preview [Homes](https://www.coramranch.com/vacation-home)
 - River House
