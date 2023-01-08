@@ -17,7 +17,6 @@
     }
     input[type=text], input[type=password] {
         font-family: 'Fira Mono', monospace;
-        color: #E0E0E0;
         width: 100%;
         padding: 12px 20px;
         margin: 8px 0;
