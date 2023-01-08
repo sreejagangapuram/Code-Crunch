@@ -4,6 +4,39 @@
 @import "{{ site.theme }}";
 
 /* "row style" is flexible size and aligns pictures in center */
+body {
+  --bg-color: #1A5D89 !important;
+  --bg-color-light: #4b7fa4; 
+  background: linear-gradient(-45deg, var(--bg-color), var(--bg-color-light), var(--bg-color), var(--bg-color-light));
+  background-size: 1200% 1200% !important;
+  animation: gradient 15s ease infinite !important;
+  height: 100vh !important;
+  font-family: 'Roboto', sans-serif ;
+  font-size: 16px;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fira Mono', monospace !important;
+  color: #FCC05F !important;
+
+}
+
+h1{
+  font-size: 40px !important;
+}
+
 .row {
     align-items: center;
     display: flex;
