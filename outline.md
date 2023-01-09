@@ -1,52 +1,28 @@
 ## Project Plan/ Assignment
 > A record of our ideas and brainstorming for the project, and assignments given to different members of the team. Also included in github pages issues.
  
-> Preview [Homes](https://www.coramranch.com/vacation-home)
-- River House
-- Dogwood House
-- Alpine and Birch House
-- Cedar House
-- Rec Room
+### Current Project Idea: 
+A card matching game, where you match the cards to collect as many points as possible before the time runs out. Player scores will be displayed on a leaderboard, and personal scores are stored in an account that you can log into
 
-## Cooking
-> On site there are cooking facilities in each house. The Alpine ranch kitchens will be for large group meals and has appliances and utensils. There is an outdoor barbecue!
+## Agile Methodology
+Our Agile Manifesto:
+> What we wish to exceed and be able to create a platoform of communtive expression through delivering quality features of value and importance. Fostering a culture of inclusion and be able to understand and implement a finished product and individuals features that play to the strengths of our group and create an atmosphere where everyone is free and desrires to contribute their own ideas without fear of judgement. Through creating a culture of colaboration we will be able to create an enviroment in which all particpate equally and deliver quality work to the best of the ability.
+
+## Assignments and Contributions
+The project [Scrumboard](https://github.com/users/sreejagangapuram/projects/3) shows what each team member is currently working on, plus their progress.
+
+## CPT Scoring Guideline:
+
+| | Category | How We're Meeting This | Notes | 
+| - | - | - | - | 
+| 1 | Program Purpose and Function | a game? | once we decide what we're matching we can add more to this | 
+| 2 | Data Abstraction | Storing user data in an account; leaderboards | | 
+| 3 | Managing Complexity | | | 
+| 4 | Procedural Abstraction | | The leaderboard could count as this? | 
+| 5 | Algorithm Implementation | | | 
+| 6 | Testing | | | 
 
 
-## Housing Assignment
 
-| Family | Attending | Assignment | Count | Children | Arrive | Depart
-| --- | --- | --- | --- | --- | --- | --- |
-| Frank, Judith | Yes | Dogwood Primary | 2 | None | Mon | Sat |
-| | | | | |
-| Johnner, Lora | Yes | ? | 3 | Shay (14) | Mon | Sat |
-| Trent, Yuri | Yes | ? | 5 | Amelia (8), Cruz (6), Gavi (1) | Mon | Sat |
-| Corey | Yes | ? | 1 | - | Mon | Fri |
-| Tiernan | Yes | ? | 1 | - | Mon | Sat |
-| Claire | Yes | ? | 1 | - | Mon | Sat |
-| | | | | |
-|Lisa-Anne, Chris | Yes | ? | 1+ | None | Mon | Sat |
-|Brianna, Forest | Yes | ? | 6 | Sayla (6), Tundra (4), Alora (2), Keelynn (1) | Mon | Sat |
-|Kira, Spencer | Yes | ? | 5 | Georgianna (6), James (5), Arabella (2), Henry (NB) | Mon | Sat |
-|Ethan, Layne | Yes | ? | 6 | William (6), Lily (4), Adeline (2), Eleanor (1) | Mon | Sat |
-| Jarom | Yes | ? | 1 | None | Mon | Sat |
-| Braden | Yes | ? | 1 | None | Mon | Sat |
-| | | | | |
-| Mathew | ? | ? | 1 | None | Unk | Unk |
-| | | | | |
-| Sherri, Drumond | Yes | ? | 2 | None | Mon | Sat |
-| Taylor | Yes | ? | 1 | None | Unk | Unk |
-| Jake | Yes | ? | 1 | None | Unk | Unk |
-| | | | | |
-| Angela, Tye | Yes | ? | 2 | None | Mon | Sat |
-| Bryce | ? | ? | 1 | None | Unk | Unk |
-| Aspen, Brandon | ? | ? | 2 | None | Unk | Unk |
-| Calem | ? | ? | 1 | None | Unk | Unk |
-| | | | | |
-| Jared, Janice | Yes | ? | 4 | Kelle (15), Naya (13) | Mon | Sat |
-| | | | | |
-| John, Melanie | Yes | ? | 4 | Connor (17), Sophia (14) | Mon | Sat |
-| Isaiah | ? | ? | 1 | None | Unk | Unk |
-| | | | | |
-| Jeremiah, Melissa | Yes | ? | 3 | Liam (11) | Mon | Sat |
-| Annalyce | ? | ? | 1 | None | Unk | Unk |
-| Peyton | Yes | ? | 1 | None | Unk | Unk |
+
+ 
