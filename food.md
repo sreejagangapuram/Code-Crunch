@@ -1,8 +1,6 @@
 ## Welcome To Our Site.: 
 > Are you a first timer? Continue to read the instructions below to familiarize yourself with our site and learn to play Code Crunch!
 
-<html> 
-</script>  
 <div class="play-container">
     <button type="submit" class="howto-button" onclick="initBoard()">Play</button>
 </div>
@@ -18,6 +16,4 @@
         <p>Match the rest!</p>
         <button type="button" onclick="closePopup1()">Close</button>
         </div>
-      </script>  
-</html>
-
+      
