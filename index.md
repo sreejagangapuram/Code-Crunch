@@ -1,3 +1,7 @@
+##  Login & Sign Up
+> Login no Account no Problem Account Creation Below
+
+## <br>Login
 <html>
   <style>
     form {
@@ -23,7 +27,7 @@
         box-shadow: 0 0 0.5em #000;
         border-radius: 0.5em;
     }
-    #login_submittion {
+     button{
         align-self: center;
         font-family: 'Fira Mono', monospace;
         width: 100%;
@@ -37,7 +41,6 @@
         border-radius: 0.75em;
         box-shadow: 0 0 1em #175178;
     }
-
   </style>
   
   <br><form>
@@ -48,5 +51,19 @@
     <label for="user_password">Password</label>
     <input type="password" id="login_password" name="user_password" placeholder="P@$$w0rd" value=""><br>
     <button type="button" id="login_submittion"><h3>Login</h3></button>
-  </form>  
+  </form>   
 </html>
+
+## Sign Up 
+<html>  
+  <form>
+    <label for="user_id_signup">Username</label>
+    <input type="text" id="login_username" name="user_id_signup" placeholder="JhonnoLovesCats" value=""><br>
+    <label for="user_email_signup">Email</label>
+    <input type="text" id="login_email_signup" name="user_email_signup" placeholder="CatsAreCool@email.com" value=""><br>
+    <label for="user_password_signup">Password</label>
+    <input type="password" id="login_password_signup" name="user_password" placeholder="1L0v3Mr.T1bbl3$" value=""><br>
+    <button type="button" id="signup_submittion"><h3>Sign Up</h3></button>
+  </form> 
+</html>
+
