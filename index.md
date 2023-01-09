@@ -1,6 +1,3 @@
-## Sign In
-> <h3>Tempory Non Functional Form By: Tirth</h3>
-
 <html>
   <style>
     form {
@@ -40,6 +37,7 @@
         border-radius: 0.75em;
         box-shadow: 0 0 1em #175178;
     }
+
   </style>
   
   <br><form>
@@ -50,20 +48,5 @@
     <label for="user_password">Password</label>
     <input type="password" id="login_password" name="user_password" placeholder="P@$$w0rd" value=""><br>
     <button type="button" id="login_submittion"><h3>Login</h3></button>
-  </form> 
-  <script>
-    document.getElementById("login_submittion").addEventListener("click", function(){
-  // Get the entered username and password
-  var username = document.getElementById("login_username").value;
-  var password = document.getElementById("login_password").value;
-  // Validate the username and password (e.g. check if they match a list of valid usernames and passwords)
-  if (username == "test" && password == "test") {
-    // If the username and password are valid, show the navbar and redirect the user to the main page
-    showNavbar();
-    window.location.href = "outline.html";
-  } else {
-    // If the username and password are invalid, display an error message
-    alert("Invalid username or password");
-  }
-});
-</script>
+  </form>  
+</html>
