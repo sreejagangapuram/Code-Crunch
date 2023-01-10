@@ -1,4 +1,23 @@
 <html>
+  <style>
+    #leaderboard{
+      font-family: 'Fira Mono', monospace !important;
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 0.75em;
+      box-shadow: 0 0 0.5em #175178;
+      padding: 10px 10px;
+    }
+    
+    th, tr, td {
+      text-align: left;
+      padding: 8px;
+      font-size: 15px;
+      font-family: 'Fira Mono', monospace !important;
+      color: #ffffff !important;;
+    }
+  </style>
+  <h2>Leaderboard</h2>
   <table id="leaderboard">
     <tr>
       <th>Username</th>
@@ -19,10 +38,10 @@
         type: 'GET',
         dataType: 'json',
         success: function(data) {
-          // Clear the current leaderboard
+          // Clear the current leaderboard on update
           $('#leaderboard tr').slice(1).remove();
 
-          // Add the new scores to the leaderboard
+          // Adds the new scores to the leaderboard from the json data
           data.forEach(function(score) {
             $('#leaderboard').append('<tr><td>' + score.username + '</td><td>' + score.score + '</td></tr>');
           });
