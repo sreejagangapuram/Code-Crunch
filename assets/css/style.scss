@@ -86,3 +86,22 @@ button {
   border-radius: 0.75em;
   box-shadow: 0 0 0.5em #175178;
 }
+
+table{
+  font-family: 'Fira Mono', monospace !important;
+  border-collapse: collapse !important;
+  width: 100%;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em #175178;
+  padding: 10px 10px;
+}
+
+blockquote{
+  font-family: 'Fira Mono', monospace !important;
+  border-radius: 0.2em;
+  box-shadow: 0 0 0.2em #175178;
+}
+
+td, th {
+  border-bottom: 0px solid #dddddd !important;
+}
