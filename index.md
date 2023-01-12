@@ -13,7 +13,35 @@
       <input type="password" id="login_password" name="user_password" placeholder="P@$$w0rd" value=""><br>
       <button type="button" id="login_submittion"><h3>Login</h3></button>
     </form>
-  </div>  
-</html>
+  </div>
+  <script>
+    /*$('#login_submittion').click(function() {
+      let username = $('#login_username').val();
+      let email = $('#login_email').val();
+      let password = $('#login_password').val();
+      let url = './login.json'; // This will be changed to the actuall value later
+      const headers = {
+        method: 'GET',
+        mode: 'cors',
+        credentials: 'omit',
+        headers: {'Content-Type': 'application/json'},
+      };
 
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url)
+
+      
+      
+      fetch(url, headers)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    });*/
+  </script>  
+</html>
+>
 
