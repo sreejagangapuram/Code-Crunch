@@ -31,6 +31,23 @@
     <br><button type="submit" class="howto-button" onclick="initBoard()">Play</button>
 </div>
 
+<SCRIPT>
+function ShowAndHide() {
+    var x = document.getElementById('SectionName');
+    if (x.style.display == 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+</SCRIPT> 
+
+<BUTTON ONCLICK="ShowAndHide()">Instructions to Play!</BUTTON>
+
+<DIV ID="SectionName" STYLE="display:none">
+First, navigate to the login page, then login with your email and make a passward. After, come back to this "Game" bar. Click "start!" Now a thirty second clock will begin. Click on a card to turn it over. Match the rest before the time runs out!
+</DIV>
+
 <div class="howto-container">
     <button type="submit" id="howto-button" onclick="openPopup1()">How to Play</button>
     <div class="howto-popup" id="howto-popup">
@@ -44,3 +61,5 @@
         </blockquote>
         <br><button type="button" id="closing-gamestart" onclick="closePopup1()">Close</button>
     </div>
+
+    
