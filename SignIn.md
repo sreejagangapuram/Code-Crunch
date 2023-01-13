@@ -1,4 +1,13 @@
 ## Sign Up
+
+<html>
+  <table>
+    <tr>
+      <td><a href = "{{site.baseurl}}/"></a></td>
+    </tr>
+  </table>
+</html>
+
 <html>   
   <form>
     <label for="user_id_signup">Username</label>
