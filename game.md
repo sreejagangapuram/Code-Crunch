@@ -53,7 +53,7 @@ First, navigate to the login page, then login with your email and make a passwar
     <div class="howto-popup" id="howto-popup">
         <br><br><h2>Instructions - Step-by-step.</h2>
         <blockquote id = "how-to-text">
-            - Navigate to the login page, then login with your email and make a passward. 
+            - Navigate to the login page, then login with your email and make a password. 
             - Then, come back to this "Game" bar.
             - Click "start!" Now a thirty second clock will begin. 
             - Click on a card to turn it over.
