@@ -9,13 +9,7 @@
       padding: 10px 10px;
     }
     
-    th, tr, td {
-      text-align: left;
-      padding: 8px;
-      font-size: 15px;
-      font-family: 'Fira Mono', monospace !important;
-      color: #ffffff !important;;
-    }
+
   </style>
   <h2>Leaderboard</h2>
   <table id="leaderboard">
