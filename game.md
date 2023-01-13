@@ -24,6 +24,7 @@
     #howto-button{
         background-color: #FCC05F;
         color: rgb(43, 41, 41);
+        
     }
 </style>
 
@@ -36,7 +37,7 @@
 <div class="howto-container">
     <button type="submit" id="howto-button">How to Play</button>
     <div class="howto-popup" id="howto-popup">
-        <br><br><h2>Instructions - Step-by-step.</h2>
+        <h2>Instructions - Step-by-step.</h2>
         <blockquote id = "how-to-text">
             - Navigate to the login page, then login with your email and make a password. 
             - Then, come back to this "Game" bar.
