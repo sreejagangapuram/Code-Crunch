@@ -2,7 +2,7 @@
 > Page for planning/ keeping track of work (or whatever else you'd like)
 
 ## Current Assignments: 
-- Leaderboard
+- Cards Game
 
 ## JSON/jQuery Notes for later
 
@@ -61,3 +61,80 @@ Once you have the JSON data, you can use jQuery to append it to the HTML table. 
 `});`
 
 In this example, `#table-body` is the ID of the `<tbody>` element in the HTML table, and `item.name` and `item.score` are the name and score of the player, respectively.
+
+## Game Research
+
+**Logos:** Github, Stack Overflow, Discord, VS Code, Amazon Servers, Fastpages, Python, HTML
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flip-card-inner.flip {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #800000;
+  border-radius: 6px;
+  border-color: #FFFFFF
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  border-radius: 6px;
+  transform: rotateY(180deg);
+}
+
+img {
+  border-radius: 6px;
+}
+
+</style>
+</head>
+<body>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="/images/istockphoto-951249780-612x612.jpg" alt="Avatar" style="width:100px;height:100px;">
+    </div>
+    <div class="flip-card-back">
+      <img src="/images/GitHub-Mark.png" alt="Avatar" style="width:100px;height:100px;">
+    </div>
+  </div>
+</div>
+<script>
+    document.querySelector('.flip-card').addEventListener('click', function() {
+      this.querySelector('.flip-card-inner').classList.toggle('flip');
+    });
+</script>
+</body>
+</html>
