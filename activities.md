@@ -124,10 +124,10 @@ img {
 <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="/images/istockphoto-951249780-612x612.jpg" alt="Avatar" style="width:100px;height:100px;">
+      <img src="{{site.baseurl}}/images/istockphoto-951249780-612x612.jpg" alt="Avatar" style="width:100px;height:100px;">
     </div>
     <div class="flip-card-back">
-      <img src="/images/GitHub-Mark.png" alt="Avatar" style="width:100px;height:100px;">
+      <img src="{{site.baseurl}}/images/GitHub-Mark.png" alt="Avatar" style="width:100px;height:100px;">
     </div>
   </div>
 </div>
