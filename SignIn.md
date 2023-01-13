@@ -1,5 +1,4 @@
 ## Sign Up
-
 <html>   
   <form>
     <label for="user_id_signup">Username</label>

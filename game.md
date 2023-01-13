@@ -1,6 +1,7 @@
 <style>
     #howto-popup{
         text-align: center;
+        visibility: hidden;
     }
 
     #how-to-text{
@@ -17,6 +18,7 @@
 
     #closing-gamestart{
         background-color: rgb(223, 109, 109);
+        visibility: hidden;
     }
 
     #howto-button{
@@ -28,28 +30,11 @@
 <div class="play-container">
     <h2>Welcome To Our Site:</h2>
     <blockquote id = "how-to-text">Are you a first timer? Continue to read the instructions below to familiarize yourself with our site and learn to play Code Crunch!</blockquote>
-    <br><button type="submit" class="howto-button" onclick="initBoard()">Play</button>
+    <br><button type="submit" class="howto-button">Play</button>
 </div>
 
-<SCRIPT>
-function ShowAndHide() {
-    var x = document.getElementById('SectionName');
-    if (x.style.display == 'none') {
-        x.style.display = 'block';
-    } else {
-        x.style.display = 'none';
-    }
-}
-</SCRIPT> 
-
-<BUTTON ONCLICK="ShowAndHide()">Instructions to Play!</BUTTON>
-
-<DIV ID="SectionName" STYLE="display:none">
-First, navigate to the login page, then login with your email and make a passward. After, come back to this "Game" bar. Click "start!" Now a thirty second clock will begin. Click on a card to turn it over. Match the rest before the time runs out!
-</DIV>
-
 <div class="howto-container">
-    <button type="submit" id="howto-button" onclick="openPopup1()">How to Play</button>
+    <button type="submit" id="howto-button">How to Play</button>
     <div class="howto-popup" id="howto-popup">
         <br><br><h2>Instructions - Step-by-step.</h2>
         <blockquote id = "how-to-text">
@@ -59,7 +44,20 @@ First, navigate to the login page, then login with your email and make a passwar
             - Click on a card to turn it over.
             - Match the rest before the time runs out!
         </blockquote>
-        <br><button type="button" id="closing-gamestart" onclick="closePopup1()">Close</button>
+        <br><button type="button" id="closing-gamestart">Close</button>
     </div>
-
-    
+</div>
+<script>
+    var howtobutton = document.getElementById("howto-button");
+    var closing = document.getElementById("closing-gamestart");
+    howtobutton.onclick = function() {
+        howtobutton.style.visibility = "hidden";
+        document.getElementById("howto-popup").style.visibility = "visible";
+        closing.style.visibility = "visible";
+    }
+    closing.onclick = function() {
+        document.getElementById("howto-popup").style.visibility = "hidden";
+        howtobutton.style.visibility = "visible";
+        closing.style.visibility = "hidden";
+    }
+</script>
