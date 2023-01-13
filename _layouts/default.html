@@ -35,13 +35,23 @@
           <p>Beat the clock, think fast, score high. Match the logos to score a point most points get the highest score on the leaderboard.</p>
           
           {% include home.html %}
+          
         </div>
 
         <!-- this is Jekyll magic, each md file in site will be inserted here -->
         {{ content }}
 
       </section>
-
     </div>
+  <script>
+    window.onload = function() {
+    let userLoggedIn = localStorage.getItem("userLoggedIn");
+    if (userLoggedIn === "true") {
+        document.getElementById("navigation").style.visibility = "visible";
+    } else {
+        document.getElementById("navigation").style.visibility = "hidden";
+    }
+}
+  </script>
   </body>
 </html>

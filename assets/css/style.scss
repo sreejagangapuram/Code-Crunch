@@ -27,7 +27,7 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6, header {
+h1, h2, h3, h4, h5, h6, header, p {
   font-family: 'Fira Mono', monospace !important;
   color: #FCC05F !important;
 
@@ -54,7 +54,6 @@ h1{
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: left !important;
     justify-content: left !important;
 }
 label {
@@ -94,6 +93,7 @@ table{
   border-radius: 0.5em;
   box-shadow: 0 0 0.5em #175178;
   padding: 10px 10px;
+  
 }
 
 blockquote{
@@ -104,4 +104,22 @@ blockquote{
 
 td, th {
   border-bottom: 0px solid #dddddd !important;
+}
+
+p{
+  font-family: 'Fira Mono', monospace !important;
+}
+
+#navigation{
+  visibility: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th, tr, td {
+  text-align: left;
+  padding: 8px;
+  font-size: 15px;
+  font-family: 'Fira Mono', monospace !important;
+  color: #ffffff !important;;
 }
