@@ -38,6 +38,15 @@
   </style>
   
   <script>
+    window.onload = function() {
+        let userLoggedIn = sessionStorage.getItem("userLoggedIn");
+        if (userLoggedIn === "true") {
+            document.getElementById("navigation").style.visibility = "visible";
+        } else {
+            document.getElementById("navigation").style.visibility = "hidden";
+        }
+    }
+    
     $('#login_submittion').click(async function() {
     let username = $('#login_username').val();
     let email = $('#login_email').val();
@@ -60,6 +69,7 @@
         if (user) {
             console.log("Login Successful");
             document.getElementById("navigation").style.visibility = "visible";
+            localStorage.setItem("userLoggedIn", "true");
             document.getElementById("SignInError").style.display = "none";
         } 
         else {
@@ -70,6 +80,12 @@
         console.log(error);
         document.getElementById("SignInError").style.display = "block";
     }
+
+    
+    /*function logout() {
+    localStorage.setItem("userLoggedIn", "false");
+    document.getElementById("navigation").style.visibility = "hidden";
+}*/
 });
 
   </script>  

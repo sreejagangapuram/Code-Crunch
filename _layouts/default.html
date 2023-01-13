@@ -43,5 +43,15 @@
 
       </section>
     </div>
+  <script>
+    window.onload = function() {
+    let userLoggedIn = localStorage.getItem("userLoggedIn");
+    if (userLoggedIn === "true") {
+        document.getElementById("navigation").style.visibility = "visible";
+    } else {
+        document.getElementById("navigation").style.visibility = "hidden";
+    }
+}
+  </script>
   </body>
 </html>
