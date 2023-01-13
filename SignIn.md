@@ -1,6 +1,9 @@
 ## Sign Up
 <html>   
-  <form>
+<table>
+  
+</table>  
+<form>
     <label for="user_id_signup">Username</label>
     <input type="text" id="login_username" name="user_id_signup" placeholder="JhonnoLovesCats" value=""><br>
     <label for="user_email_signup">Email</label>
