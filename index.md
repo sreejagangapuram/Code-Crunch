@@ -1,8 +1,7 @@
-##  Login & Sign Up
-> Login no Account no Problem Account Creation Below
-
-## <br>Login
 <html>
+  <h2>Login & Sign Up</h2>
+  <blockquote>Login no Account no Problem Account Creation Below</blockquote>
+  <br><br><h2>Login</h2>
   <div>
     <br><form id = "LoginForm">
       <label for="user_id">Username</label>
@@ -39,13 +38,15 @@
   
   <script>
     window.onload = function() {
-        let userLoggedIn = sessionStorage.getItem("userLoggedIn");
-        if (userLoggedIn === "true") {
-            document.getElementById("navigation").style.visibility = "visible";
-        } else {
-            document.getElementById("navigation").style.visibility = "hidden";
-        }
+    let userLoggedIn = localStorage.getItem("userLoggedIn");
+    if (userLoggedIn === "true") {
+        document.getElementById("navigation").style.visibility = "visible";
+        document.getElementById("lognav").style.visibility = "hidden";
+    } else {
+        document.getElementById("navigation").style.visibility = "hidden";
+        document.getElementById("lognav").style.visibility = "visible";
     }
+}
     
     $('#login_submittion').click(async function() {
     let username = $('#login_username').val();
@@ -69,8 +70,10 @@
         if (user) {
             console.log("Login Successful");
             document.getElementById("navigation").style.visibility = "visible";
+            document.getElementById("lognav").style.visibility = "hidden";
             localStorage.setItem("userLoggedIn", "true");
             document.getElementById("SignInError").style.display = "none";
+            
         } 
         else {
             console.log("Login Failed");
@@ -81,11 +84,13 @@
         document.getElementById("SignInError").style.display = "block";
     }
 
-    
-    /*function logout() {
+  let logOut = document.getElementById("logOut")
+    logOut.onclick = function exit(){
     localStorage.setItem("userLoggedIn", "false");
     document.getElementById("navigation").style.visibility = "hidden";
-}*/
+    document.getElementById("lognav").style.visibility = "visible";
+    location.href = "{{site.baseurl}}";
+}
 });
 
   </script>  

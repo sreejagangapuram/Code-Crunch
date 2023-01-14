@@ -35,6 +35,7 @@
           <p>Beat the clock, think fast, score high. Match the logos to score a point most points get the highest score on the leaderboard.</p>
           
           {% include home.html %}
+          {% include lognav.html %}
           
         </div>
 
@@ -48,8 +49,10 @@
     let userLoggedIn = localStorage.getItem("userLoggedIn");
     if (userLoggedIn === "true") {
         document.getElementById("navigation").style.visibility = "visible";
+        document.getElementById("lognav").style.visibility = "hidden";
     } else {
         document.getElementById("navigation").style.visibility = "hidden";
+        document.getElementById("lognav").style.visibility = "visible";
     }
 }
   </script>
