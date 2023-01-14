@@ -73,6 +73,7 @@
             document.getElementById("lognav").style.visibility = "hidden";
             localStorage.setItem("userLoggedIn", "true");
             document.getElementById("SignInError").style.display = "none";
+            window.location.href = "{{site.baseurl}}/game";
             
         } 
         else {
