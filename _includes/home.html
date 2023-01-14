@@ -4,7 +4,7 @@
       min-width: fit-content !important;
       max-height: fit-content !important;
   }
-  tr, td{
+  .home, .bighome{
     text-align: center;
   }
   
@@ -19,11 +19,11 @@
 </style>
 
 <table id = "navigation">
-  <tr>
-      <td><a href="{{site.baseurl}}/leaderboard"><nav>Leaderboard</nav></a></td>
-      <td><a href="{{site.baseurl}}/game"><nav>Game</nav></a></td>
-      <td><a href="{{site.baseurl}}/outline"><nav>About</nav></a></td>
-      <td><button id = "logOut">Log out</button></td>
+  <tr class = bighome>
+      <td class = "home"><a href="{{site.baseurl}}/leaderboard"><nav>Leaderboard</nav></a></td>
+      <td class = "home"><a href="{{site.baseurl}}/game"><nav>Game</nav></a></td>
+      <td class = "home"><a href="{{site.baseurl}}/outline"><nav>About</nav></a></td>
+      <td class = "home"><button id = "logOut">Log out</button></td>
   </tr>
 </table>
 
