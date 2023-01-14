@@ -93,6 +93,64 @@
     location.href = "{{site.baseurl}}";
 }
 });
+/*window.onload = function() {
+  let userLoggedIn = localStorage.getItem("userLoggedIn");
+  if (userLoggedIn === "true") {
+    document.getElementById("navigation").style.visibility = "visible";
+    document.getElementById("lognav").style.visibility = "hidden";
+  } else {
+    document.getElementById("navigation").style.visibility = "hidden";
+    document.getElementById("lognav").style.visibility = "visible";
+  }
+}
+
+$('#login_submittion').click(async function() {
+  let username = $('#login_username').val();
+  let email = $('#login_email').val();
+  let password = $('#login_password').val();
+  let url = './login.json'; 
+
+  const headers = {
+    method: 'POST',
+    mode: 'cors',
+    credentials: 'omit',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({username, email, password})
+  };
+  
+  try {
+    const response = await fetch(url, headers);
+    if (!response.ok) {
+      throw new Error("Login Failed");
+    }
+    const data = await response.json();
+    const user = data.users.find(user => user.username === username && user.password === password && user.email === email);
+    if (user) {
+      console.log("Login Successful");
+      document.getElementById("navigation").style.visibility = "visible";
+      document.getElementById("lognav").style.visibility = "hidden";
+      localStorage.setItem("userLoggedIn", "true");
+      document.getElementById("SignInError").style.display = "none";
+      window.location.href = "{{site.baseurl}}/game";
+    } 
+    else {
+      console.log("Login Failed");
+      document.getElementById("SignInError").style.display = "block";
+    }
+  } catch(error) {
+    console.log(error);
+    document.getElementById("SignInError").style.display = "block";
+  }
+
+  let logOut = document.getElementById("logOut")
+  logOut.onclick = function exit(){
+    localStorage.setItem("userLoggedIn", "false");
+    document.getElementById("navigation").style.visibility = "hidden";
+    document.getElementById("lognav").style.visibility = "visible";
+    location.href = "{{site.baseurl}}";
+  }
+});*/
+
 
   </script>  
 </html>
