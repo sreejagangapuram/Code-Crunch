@@ -93,17 +93,7 @@
     location.href = "{{site.baseurl}}";
 }
 });
-/*window.onload = function() {
-  let userLoggedIn = localStorage.getItem("userLoggedIn");
-  if (userLoggedIn === "true") {
-    document.getElementById("navigation").style.visibility = "visible";
-    document.getElementById("lognav").style.visibility = "hidden";
-  } else {
-    document.getElementById("navigation").style.visibility = "hidden";
-    document.getElementById("lognav").style.visibility = "visible";
-  }
-}
-
+/*
 $('#login_submittion').click(async function() {
   let username = $('#login_username').val();
   let email = $('#login_email').val();
@@ -140,14 +130,6 @@ $('#login_submittion').click(async function() {
   } catch(error) {
     console.log(error);
     document.getElementById("SignInError").style.display = "block";
-  }
-
-  let logOut = document.getElementById("logOut")
-  logOut.onclick = function exit(){
-    localStorage.setItem("userLoggedIn", "false");
-    document.getElementById("navigation").style.visibility = "hidden";
-    document.getElementById("lognav").style.visibility = "visible";
-    location.href = "{{site.baseurl}}";
   }
 });*/
 
