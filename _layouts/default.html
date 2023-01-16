@@ -47,6 +47,8 @@
   <script>
     window.onload = function() {
     let userLoggedIn = localStorage.getItem("userLoggedIn");
+    let userid = localStorage.getItem("userid");
+    console.log(userid)
     if (userLoggedIn === "true") {
         document.getElementById("navigation").style.visibility = "visible";
         document.getElementById("lognav").style.visibility = "hidden";

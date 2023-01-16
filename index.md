@@ -36,23 +36,13 @@
     }  
   </style>
   
-  <script>
-    window.onload = function() {
-    let userLoggedIn = localStorage.getItem("userLoggedIn");
-    if (userLoggedIn === "true") {
-        document.getElementById("navigation").style.visibility = "visible";
-        document.getElementById("lognav").style.visibility = "hidden";
-    } else {
-        document.getElementById("navigation").style.visibility = "hidden";
-        document.getElementById("lognav").style.visibility = "visible";
-    }
-}
-    
+  <script>    
     $('#login_submittion').click(async function() {
     let username = $('#login_username').val();
     let email = $('#login_email').val();
     let password = $('#login_password').val();
     let url = './login.json'; 
+    
 
     const headers = {
         method: 'GET',
@@ -72,26 +62,21 @@
             document.getElementById("navigation").style.visibility = "visible";
             document.getElementById("lognav").style.visibility = "hidden";
             localStorage.setItem("userLoggedIn", "true");
+            localStorage.setItem("userid", username);
             document.getElementById("SignInError").style.display = "none";
             window.location.href = "{{site.baseurl}}/game";
             
         } 
         else {
             console.log("Login Failed");
+            localStorage.setItem("userLoggedIn", "false");
+            localStorage.setItem("userid", "null");
             document.getElementById("SignInError").style.display = "block";
         }
     } catch(error) {
         console.log(error);
         document.getElementById("SignInError").style.display = "block";
     }
-
-  let logOut = document.getElementById("logOut")
-    logOut.onclick = function exit(){
-    localStorage.setItem("userLoggedIn", "false");
-    document.getElementById("navigation").style.visibility = "hidden";
-    document.getElementById("lognav").style.visibility = "visible";
-    location.href = "{{site.baseurl}}";
-}
 });
 /*
 $('#login_submittion').click(async function() {
