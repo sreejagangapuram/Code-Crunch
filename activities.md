@@ -73,14 +73,14 @@ In this example, `#table-body` is the ID of the `<tbody>` element in the HTML ta
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+ 
 .flip-card {
   background-color: transparent;
   width: 100px;
   height: 100px;
   perspective: 1000px;
 }
-
+ 
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -92,7 +92,7 @@ body {
 .flip-card-inner.flip {
   transform: rotateY(180deg);
 }
-
+ 
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -100,41 +100,259 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
+ 
 .flip-card-front {
   background-color: #800000;
   border-radius: 6px;
   border-color: #FFFFFF
   color: black;
 }
-
+ 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #ffffff;
   border-radius: 6px;
   transform: rotateY(180deg);
 }
-
+ 
 img {
   border-radius: 6px;
 }
-
+ 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 60px;
+}
+ 
 </style>
 </head>
 <body>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="{{site.baseurl}}/images/istockphoto-951249780-612x612.jpg" alt="Avatar" style="width:100px;height:100px;">
+  <div class="grid-container">
+    <div class="flip-card" id="card1">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
     </div>
-    <div class="flip-card-back">
-      <img src="{{site.baseurl}}/images/GitHub-Mark.png" alt="Avatar" style="width:100px;height:100px;">
+    <div class="flip-card" id="card2">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+    <div class="flip-card" id="card3">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card4">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card5">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card6">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card7">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card8">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card9">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card10">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card11">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card12">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card13">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card14">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card15">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
+    <div class="flip-card" id="card16">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+        <div class="flip-card-back">
+          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
+        </div>
+      </div>
+    </div>
 <script>
-    document.querySelector('.flip-card').addEventListener('click', function() {
-      this.querySelector('.flip-card-inner').classList.toggle('flip');
-    });
+  const flipCard1 = document.getElementById("card1");
+  const flipCard2 = document.getElementById("card2");
+  const flipCard3 = document.getElementById("card3");
+  const flipCard4 = document.getElementById("card4");
+  const flipCard5 = document.getElementById("card5");
+  const flipCard6 = document.getElementById("card6");
+  const flipCard7 = document.getElementById("card7");
+  const flipCard8 = document.getElementById("card8");
+  const flipCard9 = document.getElementById("card9");
+  const flipCard10 = document.getElementById("card10");
+  const flipCard11 = document.getElementById("card11");
+  const flipCard12 = document.getElementById("card12");
+  const flipCard13 = document.getElementById("card13");
+  const flipCard14 = document.getElementById("card14");
+  const flipCard15 = document.getElementById("card15");
+  const flipCard16 = document.getElementById("card16");
+  flipCard1.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard2.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard3.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard4.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard5.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard6.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard7.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard8.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard9.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard10.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard11.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard12.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard13.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard14.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard15.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
+  flipCard16.addEventListener("click", function() {
+    this.querySelector('.flip-card-inner').classList.toggle('flip');
+  });
 </script>
-</body>
-</html>
