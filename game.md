@@ -1,7 +1,8 @@
 <style>
     #howto-popup{
         text-align: center;
-        visibility: hidden;
+        display: none;
+        margin: auto;
     }
 
     #how-to-text{
@@ -26,15 +27,35 @@
         color: rgb(43, 41, 41);
         
     }
+
+    #play-button{
+        display: block;
+        margin: auto;
+    }
+    
+    #close-game{
+        display: none;
+        margin: auto;
+        background-color: rgb(223, 109, 109);
+    }
+
+    #game-container{
+        background-color: #e5b76d;
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        border-radius: 2em;
+        margin: auto;
+        display: none;
+    }
+
+
+    
 </style>
 
-<div class="play-container">
+<div class="howto-container">
     <h2>Welcome To Our Site:</h2>
     <blockquote id = "how-to-text">Are you a first timer? Don't worry! Continue to read the instructions below to familiarize yourself with our site and learn to play Code Crunch!</blockquote>
-    <br><button type="submit" class="howto-button">Play</button>
-</div>
-
-<div class="howto-container">
     <button type="submit" id="howto-button">How to Play</button>
     <div class="howto-popup" id="howto-popup">
         <h2>Instructions for playing code crunch.</h2>
@@ -48,17 +69,40 @@
         <br><button type="button" id="closing-gamestart">Close</button>
     </div>
 </div>
+
+<div class="play-container">
+    <button type="button" id="play-button">Play</button>
+    <button type="button" id="close-game">Close</button>
+    <br><div id="game-container">
+        <!-- game goes here-->
+    </div><br>
+</div>
+
 <script>
     var howtobutton = document.getElementById("howto-button");
     var closing = document.getElementById("closing-gamestart");
+    var playbutton = document.getElementById("play-button");
+    var closegame = document.getElementById("close-game");
     howtobutton.onclick = function() {
         howtobutton.style.visibility = "hidden";
-        document.getElementById("howto-popup").style.visibility = "visible";
+        document.getElementById("howto-popup").style.display = "block";
         closing.style.visibility = "visible";
     }
     closing.onclick = function() {
-        document.getElementById("howto-popup").style.visibility = "hidden";
+        document.getElementById("howto-popup").style.display = "none";
         howtobutton.style.visibility = "visible";
         closing.style.visibility = "hidden";
+    }
+
+    playbutton.onclick = function() {
+        document.getElementById("game-container").style.display = "block";
+        document.getElementById("play-button").style.display = "none";
+        document.getElementById("close-game").style.display = "block";
+    }
+
+    closegame.onclick = function() {
+        document.getElementById("game-container").style.display = "none";
+        document.getElementById("play-button").style.display = "block";
+        document.getElementById("close-game").style.display = "none";
     }
 </script>
