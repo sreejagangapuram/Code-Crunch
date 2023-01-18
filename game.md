@@ -85,11 +85,14 @@
     border-radius: 5px;
 }
 
+<style>
+
 <div class=”buttons”>
   <button id=”pauseTimer”>Stop</button>
   <button id=”startTimer”>Start</button>
   <button id=”resetTimer”>Reset</button>
 </div>
+
 .buttons{
     width: 90%;
     margin: 60px auto 0 auto;
@@ -108,6 +111,7 @@
     outline: none;
 }
 
+</style>
 
 <!--- end (E) --->
 
