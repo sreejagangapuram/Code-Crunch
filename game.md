@@ -56,62 +56,6 @@
 
 <!-- timer: this is just a draft; this will be moved to inside the game later in development (E) --> 
 
-<style>
-
-    #timer-container{
-            background-color: #e5b76d;
-            text-align: center;
-            width: 500px;
-            border-radius: 2em;
-            margin: auto;
-            display: none;
-    }
-</style>
-
-<div class="timer">
-    00: 00: 00
-</div>
-
-.timer{ 
-    position: relative;
-    width: 95%;
-    background: #1A5D89;
-    font-family: ‘Roboto', sans serif;
-    color: #ffffff;
-    font-size: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 5px;
-}
-
-<style>
-
-<div class=”buttons”>
-  <button id=”pauseTimer”>Stop</button>
-  <button id=”startTimer”>Start</button>
-  <button id=”resetTimer”>Reset</button>
-</div>
-
-.buttons{
-    width: 90%;
-    margin: 60px auto 0 auto;
-    display: flex;
-    justify-content: space-around;
-}
-.buttons button{
-    width: 120px;
-    height: 45px;
-    background-color: #e5b76d;
-    color: #ffffff;
-    border: none;
-    font-family: ‘Roberto’,sans-serif;
-    font-size: 18px;
-    border-radius: 5px;
-    outline: none;
-}
-
-</style>
 
 <!--- end (E) --->
 
