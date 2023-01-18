@@ -9,11 +9,11 @@
         text-align: left;
     }
 
-    .play-container{
+    #play-container{
         text-align: center;
     }
 
-    .howto-container{
+    #howto-container{
         text-align: center;
     }
 
@@ -43,7 +43,7 @@
         display: none;
         text-align: center;
     }
-    
+
     #game{
         background-color: #e5b76d;
         text-align: center;
@@ -53,9 +53,6 @@
         margin: auto;
         display: block;
     }
-
-
-    
 </style>
 
 
@@ -65,7 +62,7 @@
 <!--- end (E) --->
 
 
-<div class="howto-container">
+<div id="howto-container">
     <h2>Welcome To Our Site:</h2>
     <blockquote id = "how-to-text">Are you a first timer? Don't worry! Continue to read the instructions below to familiarize yourself with our site and learn to play Code Crunch!</blockquote>
     <button type="submit" id="howto-button">How to Play</button>
@@ -82,7 +79,7 @@
     </div>
 </div>
 
-<div class="play-container">
+<div id="play-container">
     <button type="button" id="play-button">Play</button>
     <button type="button" id="close-game">Close</button>
     <br><div id="game-container">
