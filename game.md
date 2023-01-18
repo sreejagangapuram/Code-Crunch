@@ -84,7 +84,8 @@
         <!-- game goes here-->
     </div><br>
 </div>
-
+<!-- needs to be refactored to make it more readable and to be able to properly format in a way that would be more appropriate for the game
+     with also needing to move the elements to their correct places not needing uneeded script and style tags
 <script>
     var howtobutton = document.getElementById("howto-button");
     var closing = document.getElementById("closing-gamestart");
@@ -404,3 +405,4 @@ img {
     this.querySelector('.flip-card-inner').classList.toggle('flip');
   });
 </script>
+-->
