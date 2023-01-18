@@ -40,13 +40,18 @@
     }
 
     #game-container{
+        display: none;
+        text-align: center;
+    }
+    
+    #game{
         background-color: #e5b76d;
         text-align: center;
         width: 500px;
         height: 500px;
         border-radius: 2em;
         margin: auto;
-        display: none;
+        display: block;
     }
 
 
@@ -81,11 +86,11 @@
     <button type="button" id="play-button">Play</button>
     <button type="button" id="close-game">Close</button>
     <br><div id="game-container">
-        <!-- game goes here-->
+      <div id="timer"><!--timer goes here--></div>
+      <div id = "game"><!-- game goes here--></div>  
     </div><br>
 </div>
-<!-- needs to be refactored to make it more readable and to be able to properly format in a way that would be more appropriate for the game
-     with also needing to move the elements to their correct places not needing uneeded script and style tags
+
 <script>
     var howtobutton = document.getElementById("howto-button");
     var closing = document.getElementById("closing-gamestart");
@@ -114,7 +119,8 @@
         document.getElementById("close-game").style.display = "none";
     }
 </script>
-
+<!-- needs to be refactored to make it more readable and to be able to properly format in a way that would be more appropriate for the game
+     with also needing to move the elements to their correct places not needing uneeded script and style tags
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
