@@ -322,14 +322,14 @@ img {
     this.querySelector('.flip-card-inner').classList.toggle('flip');
   });
 var images = [
- "/images/aw.png",
-  "/images/dc.png",
-  "/images/fp.png",
-  "/images/gh.png",
-  "/images/p.png",
-  "/images/html.png",
-  "/images/so.png",
-  "/images/vs.png"
+ "{{site.baseurl}}/images/aw.png",
+  "{{site.baseurl}}/images/dc.png",
+  "{{site.baseurl}}/images/fp.png",
+  "{{site.baseurl}}/images/gh.png",
+  "{{site.baseurl}}/images/p.png",
+  "{{site.baseurl}}/images/html.png",
+  "{{site.baseurl}}/images/so.png",
+  "{{site.baseurl}}/images/vs.png"
 ];
 var imageIndices = [];
 for (var i = 0; i < 8; i++) {
