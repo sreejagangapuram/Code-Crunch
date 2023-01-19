@@ -207,7 +207,7 @@
             <div class="flip-card" id="card8">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
-                  <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
+                  <img src="{{site.baseurl}}/images/b.jpg" alt="Avaatar" style="width:100px;height:100px;">
                 </div>
                 <div class="back" id="img-load8"></div>
               </div>
