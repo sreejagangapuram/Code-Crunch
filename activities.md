@@ -73,14 +73,12 @@ In this example, `#table-body` is the ID of the `<tbody>` element in the HTML ta
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
- 
 .flip-card {
   background-color: transparent;
   width: 100px;
   height: 100px;
   perspective: 1000px;
 }
- 
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -92,7 +90,6 @@ body {
 .flip-card-inner.flip {
   transform: rotateY(180deg);
 }
- 
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
@@ -100,24 +97,28 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
- 
 .flip-card-front {
   background-color: #800000;
   border-radius: 6px;
   border-color: #FFFFFF
   color: black;
 }
- 
 .flip-card-back {
   background-color: #ffffff;
   border-radius: 6px;
   transform: rotateY(180deg);
 }
- 
+.back {
+  background-color: #ffffff;
+  border-radius: 6px;
+  width: 100px;
+  height: 100px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
 img {
   border-radius: 6px;
 }
- 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -125,9 +126,9 @@ img {
   grid-column-gap: 0px;
   grid-row-gap: 60px;
 }
- 
 </style>
 </head>
+<body>
 <body>
   <div class="grid-container">
     <div class="flip-card" id="card1">
@@ -135,19 +136,15 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div class="back" id="img-load"></div>
       </div>
     </div>
-    <div class="flip-card" id="card2">
+      <div class="flip-card" id="card2">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card3">
@@ -155,9 +152,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card4">
@@ -165,19 +160,15 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card5">
-    <div class="flip-card-inner">
+      <div class="flip-card-inner">
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card6">
@@ -185,9 +176,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card7">
@@ -195,9 +184,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card8">
@@ -205,9 +192,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card9">
@@ -215,9 +200,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card10">
@@ -225,9 +208,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card11">
@@ -235,9 +216,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card12">
@@ -245,9 +224,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card13">
@@ -255,9 +232,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card14">
@@ -265,19 +240,15 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
-    <div class="flip-card" id="card15">
+        <div class="flip-card" id="card15">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
     <div class="flip-card" id="card16">
@@ -285,11 +256,10 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="flip-card-back">
-          <img src="{{site.baseurl}}/images/image2.jpg" alt="Avatar" style="width:100px;height:100px;">
-        </div>
+        <div id="img-load"></div>
       </div>
     </div>
+  </div>
 <script>
   const flipCard1 = document.getElementById("card1");
   const flipCard2 = document.getElementById("card2");
@@ -310,7 +280,7 @@ img {
   flipCard1.addEventListener("click", function() {
     this.querySelector('.flip-card-inner').classList.toggle('flip');
   });
-  flipCard2.addEventListener("click", function() {
+    flipCard2.addEventListener("click", function() {
     this.querySelector('.flip-card-inner').classList.toggle('flip');
   });
   flipCard3.addEventListener("click", function() {
@@ -355,4 +325,18 @@ img {
   flipCard16.addEventListener("click", function() {
     this.querySelector('.flip-card-inner').classList.toggle('flip');
   });
+var images = [
+ "/images/aw.png",
+  "/images/dc.png",
+  "/images/fp.png",
+  "/images/gh.png",
+  "/images/p.png",
+  "/images/html.png",
+  "/images/so.png",
+  "/images/vs.png"
+];
+var randomImage = images[Math.floor(Math.random() * images.length)];
+console.log(randomImage);
+var image = "<img src='" + randomImage + "'>";
+document.getElementById("img-load").innerHTML = image;
 </script>
