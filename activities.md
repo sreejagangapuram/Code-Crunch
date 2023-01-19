@@ -66,7 +66,6 @@ In this example, `#table-body` is the ID of the `<tbody>` element in the HTML ta
 
 **Logos:** Github, Stack Overflow, Discord, VS Code, Amazon Servers, Fastpages, Python, HTML
 
-<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -113,8 +112,6 @@ body {
   border-radius: 6px;
   width: 100px;
   height: 100px;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 img {
   border-radius: 6px;
@@ -129,14 +126,13 @@ img {
 </style>
 </head>
 <body>
-<body>
   <div class="grid-container">
     <div class="flip-card" id="card1">
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div class="back" id="img-load"></div>
+        <div class="back" id="img-load1"></div>
       </div>
     </div>
       <div class="flip-card" id="card2">
@@ -144,7 +140,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load2"></div>
       </div>
     </div>
     <div class="flip-card" id="card3">
@@ -152,7 +148,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load3"></div>
       </div>
     </div>
     <div class="flip-card" id="card4">
@@ -160,7 +156,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load4"></div>
       </div>
     </div>
     <div class="flip-card" id="card5">
@@ -168,7 +164,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load5"></div>
       </div>
     </div>
     <div class="flip-card" id="card6">
@@ -176,7 +172,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load6"></div>
       </div>
     </div>
     <div class="flip-card" id="card7">
@@ -184,7 +180,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load7"></div>
       </div>
     </div>
     <div class="flip-card" id="card8">
@@ -192,7 +188,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load8"></div>
       </div>
     </div>
     <div class="flip-card" id="card9">
@@ -200,7 +196,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load9"></div>
       </div>
     </div>
     <div class="flip-card" id="card10">
@@ -208,7 +204,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load10"></div>
       </div>
     </div>
     <div class="flip-card" id="card11">
@@ -216,7 +212,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load11"></div>
       </div>
     </div>
     <div class="flip-card" id="card12">
@@ -224,7 +220,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load12"></div>
       </div>
     </div>
     <div class="flip-card" id="card13">
@@ -232,7 +228,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load13"></div>
       </div>
     </div>
     <div class="flip-card" id="card14">
@@ -240,7 +236,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load14"></div>
       </div>
     </div>
         <div class="flip-card" id="card15">
@@ -248,7 +244,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load15"></div>
       </div>
     </div>
     <div class="flip-card" id="card16">
@@ -256,7 +252,7 @@ img {
         <div class="flip-card-front">
           <img src="{{site.baseurl}}/images/b.jpg" alt="Avatar" style="width:100px;height:100px;">
         </div>
-        <div id="img-load"></div>
+        <div class="back" id="img-load16"></div>
       </div>
     </div>
   </div>
@@ -335,8 +331,15 @@ var images = [
   "/images/so.png",
   "/images/vs.png"
 ];
-var randomImage = images[Math.floor(Math.random() * images.length)];
-console.log(randomImage);
-var image = "<img src='" + randomImage + "'>";
-document.getElementById("img-load").innerHTML = image;
+var imageIndices = [];
+for (var i = 0; i < 8; i++) {
+    imageIndices.push(i);
+    imageIndices.push(i);
+}
+for (var i = 1; i <= 16; i++) {
+    var randomIndex = imageIndices.splice(Math.floor(Math.random() * imageIndices.length), 1)[0];
+    var image = "<img src='" + images[randomIndex] + "'>";
+    document.getElementById("img-load" + i).innerHTML = image;
+}
 </script>
+</body>
