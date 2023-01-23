@@ -231,7 +231,7 @@ img {
 </section>
 </body>
 <script>
-var possibleCardFaces = ["/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png", "/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png"];
+var possibleCardFaces = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
 var lowScore = localStorage.getItem("lowScore");
 var score = 0;
 var flippedCards = [];
@@ -256,7 +256,7 @@ function assignCardFaces($cardFaces) {
   for (var i = 0; i < 16; i++) {
     $($cardFaces[i]).html('<img src="' + getRandomFace() + '">');
   }
-  possibleCardFaces = ["/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png", "/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png"];
+  possibleCardFaces = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
 }
 function isNotFlipped($card) {
   return !$card.hasClass("flipped");
