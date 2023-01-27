@@ -233,16 +233,10 @@ img {
   }
 
 var possibleCardFaces = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
-var lowScore = localStorage.getItem("lowScore");
-var score = 0;
 var flippedCards = [];
 var matchedCards = [];
 var locked = false;
 var flipTimeout = 700;
-function assignLowScore($lowScoreOutput) {
-lowScore = lowScore || "N/A";
-$lowScoreOutput.text("Low Score: " + lowScore);
-}
 function getRandomIndex(length) {
 return Math.floor(Math.random() * length);
 }
@@ -272,31 +266,9 @@ setTimeout(function() {
   locked = false;
 }, flipTimeout);
 }
-function hideScoreBoard($scoreBoard) {
-$scoreBoard.addClass("hidden");
-}
-function checkForLowScore(score, $lowScoreOutput) {
-if (lowScore === "N/A") {
-  lowScore = Infinity;
-}
-if (score < lowScore) {
-  localStorage.setItem("lowScore", score);
-  lowScore = localStorage.getItem("lowScore");
-  $lowScoreOutput.html("<em>*new*</em> Low Score: " + score);
-}
-}
-function renderWinScreen($winScreen) {
-setTimeout(function() {
-  $winScreen.addClass("visible");
-}, 400);
-}
-function reset($lowScoreOutput, $cardFaces, $flipCardElements, $winScreen, $scoreBoard) {
+function reset($cardFaces, $flipCardElements) {
 assignCardFaces($cardFaces);
 matchedCards = [];
-score = 0;
-$lowScoreOutput.text("Low Score: " + lowScore);
-$winScreen.removeClass("visible");
-$scoreBoard.removeClass("hidden");
 $flipCardElements.removeClass("flipped");
 }
 $(document).ready(function(){
@@ -304,24 +276,17 @@ var $playButton = $("#play-button");
 var $canvas = $("#canvas");
 var $flipCardElements = $(".flip-card");
 var $cardFaces = $(".flip-card .flip-card-back");
-var $scoreBoard = $("#score-board");
-var $lowScoreOutput = $(".low-score");
-var $winScreen = $("#win-screen");
 var $replay = $("#replay-button");
-assignLowScore($lowScoreOutput);
 assignCardFaces($cardFaces);
 $playButton.on("click", function() {
   $canvas.removeClass("hidden");
-  $footer.removeClass("hidden");
 });
 $canvas.on("click", ".flip-card-front, .flip-card-front h2", function(event) {
   if(event.target != this || locked){ return true; }
-  // in case I decide to put a figure on front of card
   var $card = $(event.target).closest(".flip-card");
   if (isNotFlipped($card)) {
     $card.addClass("flipped");
     flippedCards.push($card);
-    score++;
   }
   if (flippedCards.length === 2) {
     if (areMatching(flippedCards)) {
@@ -332,14 +297,9 @@ $canvas.on("click", ".flip-card-front, .flip-card-front h2", function(event) {
     }
     flippedCards = [];
   }
-  if(matchedCards.length === $flipCardElements.length) {
-    checkForLowScore(score, $lowScoreOutput);
-    hideScoreBoard($scoreBoard);
-    renderWinScreen($winScreen);
-  }
 });
 $replay.on("click", function() {
-  reset($lowScoreOutput, $cardFaces, $flipCardElements, $winScreen, $scoreBoard);
+  reset($cardFaces, $flipCardElements);
 });
 })
 </script>
