@@ -100,7 +100,7 @@
     position: relative;
     display: block;
     padding-top: 22px;
-    margin: 22px
+    margin: 21px
 }
 
 img {
