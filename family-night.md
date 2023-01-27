@@ -43,19 +43,20 @@
         position: relative !important;
         background-color: #e5b76d;
         text-align: center;
-        width: 500px;
-        height: 500px;
+        width: 480px;
+        height: 480px;
         border-radius: 1em;
         margin: auto;
         display: none;
     }
 
 #game {
+    justify-self: center;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     
 }
 .flip-card {
@@ -98,9 +99,8 @@
 #canvas{
     position: relative;
     display: block;
-    padding-top: 13;
-    margin: 13px;
-
+    padding-top: 22px;
+    margin: 22px
 }
 
 img {
