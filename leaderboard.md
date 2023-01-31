@@ -12,7 +12,7 @@
     #finder{
       position: absolute;
       top: 235px;
-      left: 60%;
+      left: 58%;
       justify-content: right;
       width: fit-content;
       height: fit-content;
@@ -42,7 +42,7 @@
       display: inline-block;
       justify-content: center;
       padding: 0px;
-      margin: 5px;
+      margin: 10px;
       font-size: 10pt;
       color: #20323f;
       border-width: 2px;
