@@ -22,7 +22,7 @@
 
     #search{
       width: 200px;
-      border-radius: 20px;
+      border-radius: 13px;
       text-align: center;
       height: fit-content;
       background-color: transparent !important;
