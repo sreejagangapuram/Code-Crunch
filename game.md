@@ -44,20 +44,18 @@
       background-color: #e5b76d;
       text-align: center;
       width: 480px;
-      height: 480px;
+      height: 555px;
       border-radius: 1em;
       margin: auto;
       display: none;
   }
-
 #game {
   justify-self: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   width: 450px;
-  height: 450px;
-  
+  height: 450px;  
 }
 .flip-card {
   background-color: transparent;
@@ -95,17 +93,69 @@
 .flip-card.flipped {
   transform: rotateY(180deg);
 }
-
 #canvas{
   position: relative;
   display: block;
   padding-top: 22px;
   margin: 21px
 }
-
 img {
   border-radius: 20px;
 }    
+.frozen {
+  pointer-events: none;
+  opacity: 1;
+}
+.frozen-text {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Lucida Console", "Monaco", monospace;
+  color: #ff9304;
+  text-align: center;
+}
+.frozen .frozen-text {
+  display: block;
+}
+#popup-image {
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+}
+.progressbar {
+  width: 80%;
+  margin: 25px auto;
+  border: solid 1px #000;
+  border-radius: 6px;
+}
+.progressbar .inner {
+  height: 15px;
+  animation: progressbar-countdown;
+  animation-duration: 40s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  animation-timing-function: linear;
+  border-radius: 6px;
+}
+@keyframes progressbar-countdown {
+  0% {
+    width: 100%;
+    background: #66D3FA;
+  }
+  100% {
+    width: 0%;
+    background: #F00;
+  }
+}
 </style>
 
 <div class="howto-container">
@@ -134,6 +184,7 @@ img {
   <br><div id="game-container">
       <!-- game goes here-->
       <section id="canvas" class="hidden">
+      <div id='progressbar'></div>
       <div id="game">
         <div id="flip-card-1" class="flip-card">
           <figure class="flip-card-front"></figure>
@@ -199,6 +250,7 @@ img {
           <figure class="flip-card-front"></figure>
           <figure class="flip-card-back"></figure>
         </div>
+        <img id="popup-image" src="/images/m.png">
       </div>
     </section>
   </div><br>
@@ -302,4 +354,23 @@ $replay.on("click", function() {
   reset($cardFaces, $flipCardElements);
 });
 })
+function createProgressbar(id, duration, callback) {
+  var progressbar = document.getElementById(id);
+  progressbar.className = 'progressbar';
+  var progressbarinner = document.createElement('div');
+  progressbarinner.className = 'inner';
+  progressbarinner.style.animationDuration = duration;
+  if (typeof(callback) === 'function') {
+    progressbarinner.addEventListener('animationend', callback);
+  }
+  progressbar.appendChild(progressbarinner);
+  progressbarinner.style.animationPlayState = 'running';
+}
+addEventListener('load', function() {
+  const container = document.getElementById("game-container");
+  createProgressbar('progressbar', '3s', function() {
+    container.classList.add("frozen");
+    document.getElementById("popup-image").style.display = "block";
+  });
+});
 </script>
