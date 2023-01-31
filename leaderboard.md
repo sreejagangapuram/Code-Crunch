@@ -9,8 +9,51 @@
       padding: 10px 10px;
     }
     
+    #finder{
+      position: absolute;
+      top: 235px;
+      left: 60%;
+      justify-content: right;
+      width: fit-content;
+      height: fit-content;
+      display: inline-block;
+      padding: 10px;
+    }
+
+    #search{
+      width: 200px;
+      border-radius: 20px;
+      text-align: center;
+      height: fit-content;
+      background-color: transparent !important;
+      border: none;
+      color: white;
+      box-shadow: 0 0 1em #175178;
+    }
+
+    ::placeholder{
+      color: white; 
+    }
+    #search-button{
+      height: 40px;
+      width: 40px;
+      background-color: #e5b76d;
+      border-radius: 50%;
+      display: inline-block;
+      justify-content: center;
+      padding: 0px;
+      margin: 5px;
+      font-size: 10pt;
+      color: #20323f;
+      border-width: 2px;
+      box-shadow: 0 0 1em #175178;
+    }
 
   </style>
+  <form id = "finder">
+    <input type="text" id="search" name="searchbar" placeholder="Search">
+    <button type="button" id = "search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
   <h2>Leaderboard</h2>
   <table id="leaderboard">
     <tr>
