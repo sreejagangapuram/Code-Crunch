@@ -44,11 +44,30 @@
       background-color: #e5b76d;
       text-align: center;
       width: 480px;
-      height: 555px;
+      height: 480px;
       border-radius: 1em;
       margin: auto;
       display: none;
   }
+#bar{
+  margin-top: 40px;
+  font-family: 'Fira Mono', monospace !important;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 0.75em;
+  box-shadow: 0 0 0.5em #175178;
+  padding: 10px 10px;
+}
+.bar-1 {
+  margin-left: 10px;
+  width: 100px;
+}
+.bar-2{
+  width: 100px;
+}
+.bar-3{
+  width: 100px;
+}
 #game {
   justify-self: center;
   display: grid;
@@ -124,15 +143,14 @@ img {
 #popup-image {
   position: absolute;
   display: none;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
   height: 300px;
 }
 .progressbar {
-  width: 80%;
-  margin: 25px auto;
+  width: 200px;
   border: solid 1px #000;
   border-radius: 6px;
 }
@@ -179,12 +197,18 @@ img {
   <button type="button" id="play-button">Play</button>
   <button type="button" id="close-game">Close</button>
   <div id = "timer">
-      <!--Timer Goes Here-->
+    <table id="bar">
+      <tr>
+        <th><button type="button" class="bar-1">HS</button></th>
+        <th><button type="button" class="bar-2">STAR</button></th>
+        <th><button type="button" class="bar-3">CS</button></th>
+        <th><div id='progressbar'></div></th>
+      </tr>
+    </table>
   </div>
   <br><div id="game-container">
       <!-- game goes here-->
       <section id="canvas" class="hidden">
-      <div id='progressbar'></div>
       <div id="game">
         <div id="flip-card-1" class="flip-card">
           <figure class="flip-card-front"></figure>
@@ -250,7 +274,7 @@ img {
           <figure class="flip-card-front"></figure>
           <figure class="flip-card-back"></figure>
         </div>
-        <img id="popup-image" src="/images/m.png">
+        <img id="popup-image" src="{{site.baseurl}}/images/m.png">
       </div>
     </section>
   </div><br>
@@ -369,8 +393,10 @@ function createProgressbar(id, duration, callback) {
 addEventListener('load', function() {
   const container = document.getElementById("game-container");
   createProgressbar('progressbar', '3s', function() {
+    // add jquery
     container.classList.add("frozen");
     document.getElementById("popup-image").style.display = "block";
+    // or here
   });
 });
 </script>
