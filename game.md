@@ -280,7 +280,7 @@ img {
           <figure class="flip-card-front"></figure>
           <figure class="flip-card-back"></figure>
         </div>
-        <img id="popup-image" src="/images/m.png">
+        <img id="popup-image" src="{{site.baseurl}}/images/m.png">
       </div>
     </section>
   </div><br>
