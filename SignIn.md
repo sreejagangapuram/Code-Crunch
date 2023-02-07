@@ -51,7 +51,7 @@
       
         const headers = {
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             cache: 'default',
             credentials: 'include',
             headers: {
