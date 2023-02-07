@@ -49,6 +49,9 @@
       margin: auto;
       display: none;
   }
+#tcontainer{
+  display: none;
+}
 #bar{
   margin-top: 40px;
   font-family: 'Fira Mono', monospace !important;
@@ -196,6 +199,7 @@ img {
 <div class="play-container">
   <button type="button" id="play-button">Play</button>
   <button type="button" id="close-game">Close</button>
+  <div id="tcontainer">
   <div id = "timer">
     <table id="bar">
       <tr>
@@ -206,9 +210,11 @@ img {
       </tr>
     </table>
   </div>
+  </div>
   <br><div id="game-container">
       <!-- game goes here-->
       <section id="canvas" class="hidden">
+      <div id='progressbar'></div>
       <div id="game">
         <div id="flip-card-1" class="flip-card">
           <figure class="flip-card-front"></figure>
@@ -274,7 +280,7 @@ img {
           <figure class="flip-card-front"></figure>
           <figure class="flip-card-back"></figure>
         </div>
-        <img id="popup-image" src="{{site.baseurl}}/images/m.png">
+        <img id="popup-image" src="/images/m.png">
       </div>
     </section>
   </div><br>
@@ -298,12 +304,14 @@ img {
 
   playbutton.onclick = function() {
       document.getElementById("game-container").style.display = "block";
+      document.getElementById("tcontainer").style.display = "block";
       document.getElementById("play-button").style.display = "none";
       document.getElementById("close-game").style.display = "block";
   }
 
   closegame.onclick = function() {
       document.getElementById("game-container").style.display = "none";
+      document.getElementById("tcontainer").style.display = "none";
       document.getElementById("play-button").style.display = "block";
       document.getElementById("close-game").style.display = "none";
   }
