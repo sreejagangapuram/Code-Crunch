@@ -51,7 +51,7 @@
       
         const headers = {
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             cache: 'default',
             credentials: 'include',
             headers: {
@@ -59,21 +59,21 @@
             },
             body: JSON.stringify({username: user, email: user_email,  password: pass}),
         };
-        try {
-            let response = await fetch(url, headers);
-            let result = await response.json();
-            console.log('Success:', result);
-            if (result.status == "success"){
-                document.getElementById("RegistrationSuccess").style.display = "block";
-                document.getElementById("RegistrationError").style.display = "none";
-            } else {
-                document.getElementById("RegistrationError").style.display = "block";
-                document.getElementById("RegistrationSuccess").style.display = "none";
-            }
-        } catch (error) {
-        
-            console.error('Error:', error);
-        }
+      try {
+        let response = await fetch(url, headers);
+        let result = await response.json();
+        console.log('Success:', result);
+      if (result.status == "success"){
+        document.getElementById("RegistrationSuccess").style.display = "block";
+        document.getElementById("RegistrationError").style.display = "none";
+      } else {
+        document.getElementById("RegistrationError").style.display = "block";
+        document.getElementById("RegistrationSuccess").style.display = "none";
+      }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+
     });
   </script>
 
