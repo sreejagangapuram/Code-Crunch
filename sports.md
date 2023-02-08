@@ -1,31 +1,11 @@
 <style>
-  #howto-popup{
-      text-align: center;
-      display: none;
-      margin: auto;
-  }
-
-  #how-to-text{
-      text-align: left;
-  }
-
   .play-container{
-      text-align: center;
-  }
-
-  .howto-container{
       text-align: center;
   }
 
   #closing-gamestart{
       background-color: rgb(223, 109, 109);
       visibility: hidden;
-  }
-
-  #howto-button{
-      background-color: #FCC05F;
-      color: rgb(43, 41, 41);
-      
   }
 
   #play-button{
@@ -49,27 +29,7 @@
       margin: auto;
       display: none;
   }
-#bar{
-  margin-top: 40px;
-  font-family: 'Fira Mono', monospace !important;
-  border-collapse: collapse;
-  width: 100%;
-  border-radius: 0.75em;
-  box-shadow: 0 0 0.5em #175178;
-  padding: 10px 10px;
-}
-.bar-1 {
-  margin-left: 90px;
-  width: 100px;
-}
-.bar-2{
-  margin-left: 10px;
-  width: 100px;
-}
-.bar-3{
-  margin-right: 50px;
-  width: 100px;
-}
+
 #game {
   justify-self: center;
   display: grid;
@@ -124,25 +84,7 @@ img {
   border-radius: 20px;
 }    
 </style>
-
-<div class="howto-container">
-  <h2>Welcome To Our Site:</h2>
-  <blockquote id = "how-to-text">Are you a first timer? Don't worry! Continue to read the instructions below to familiarize yourself with our site and learn to play Code Crunch!</blockquote>
-  <button type="submit" id="howto-button">How to Play</button>
-  <div class="howto-popup" id="howto-popup">
-      <h2>Instructions for playing code crunch.</h2>
-      <blockquote id = "how-to-text">
-          - Navigate to the login page, then login with your email and make a password. 
-          - Then, come back to this "Game" bar.
-          - Click "start!" Now a thirty second clock will begin. 
-          - Click on a card to turn it over.
-          - Match the rest before the time runs out!
-      </blockquote>
-      <br><button type="button" id="closing-gamestart">Close</button>
-  </div>
-</div>
-
-<div id="score">Attempts: 0</div>
+<span id="match-count"></span>
 <div class="play-container">
   <button type="button" id="play-button">Play</button>
   <button type="button" id="close-game">Close</button>
@@ -219,55 +161,44 @@ img {
 </div>
 
 <script>
-  var howtobutton = document.getElementById("howto-button");
-  var closing = document.getElementById("closing-gamestart");
-  var playbutton = document.getElementById("play-button");
-  var closegame = document.getElementById("close-game");
-  howtobutton.onclick = function() {
-      howtobutton.style.visibility = "hidden";
-      document.getElementById("howto-popup").style.display = "block";
-      closing.style.visibility = "visible";
-  }
-  closing.onclick = function() {
-      document.getElementById("howto-popup").style.display = "none";
-      howtobutton.style.visibility = "visible";
-      closing.style.visibility = "hidden";
-  }
+var playbutton = document.getElementById("play-button");
+var closegame = document.getElementById("close-game");
+playbutton.onclick = function() {
+  document.getElementById("game-container").style.display = "block";
+  document.getElementById("tcontainer").style.display = "block";
+  document.getElementById("play-button").style.display = "none";
+  document.getElementById("close-game").style.display = "block";
+}
 
-  playbutton.onclick = function() {
-      document.getElementById("game-container").style.display = "block";
-      document.getElementById("play-button").style.display = "none";
-      document.getElementById("close-game").style.display = "block";
-  }
+closegame.onclick = function() {
+  document.getElementById("game-container").style.display = "none";
+  document.getElementById("tcontainer").style.display = "none";
+  document.getElementById("play-button").style.display = "block";
+  document.getElementById("close-game").style.display = "none";
+}
 
-  closegame.onclick = function() {
-      document.getElementById("game-container").style.display = "none";
-      document.getElementById("play-button").style.display = "block";
-      document.getElementById("close-game").style.display = "none";
-  }
-var possibleCardFaces = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
+var possibleCardSides = ["/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png", "/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png"];
 var flippedCards = [];
 var matchedCards = [];
 var locked = false;
-var score = 0;
 var flipTimeout = 700;
 function getRandomIndex(length) {
 return Math.floor(Math.random() * length);
 }
-function getRandomFace(randomIndex) {
-var face;
-randomIndex = getRandomIndex(possibleCardFaces.length);
-face = possibleCardFaces[randomIndex];
-possibleCardFaces.splice(randomIndex, 1);
-return face;
+function getRandomSide(randomIndex) {
+var side;
+randomIndex = getRandomIndex(possibleCardSides.length);
+side = possibleCardSides[randomIndex];
+possibleCardSides.splice(randomIndex, 1);
+return side;
 }
-function assignCardFaces($cardFaces) {
+function assignCardSides($cardSides) {
 for (var i = 0; i < 16; i++) {
-  $($cardFaces[i]).html('<img src="' + getRandomFace() + '">');
+  $($cardSides[i]).html('<img src="' + getRandomSide() + '">');
 }
-possibleCardFaces = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
+possibleCardSides = ["/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png", "/images/aw.png", "/images/dc.png", "/images/fp.png", "/images/gh.png", "/images/html.png", "/images/p.png", "/images/so.png", "/images/vs.png"];
 }
-function isNotFlipped($card) {
+function notFlipped($card) {
 return !$card.hasClass("flipped");
 }
 function areMatching(flippedCards) {
@@ -280,46 +211,50 @@ setTimeout(function() {
   locked = false;
 }, flipTimeout);
 }
-function reset($cardFaces, $flipCardElements) {
-  assignCardFaces($cardFaces);
-  matchedCards = [];
-  flippedCards = [];
-  score = 0;
-  $score.text("Attempts: " + score);
-  $flipCardElements.removeClass("flipped");
+function reset($cardSides, $flipCardElements) {
+assignCardSides($cardSides);
+matchedCards = [];
+$flipCardElements.removeClass("flipped");
 }
 $(document).ready(function(){
 var $playButton = $("#play-button");
 var $canvas = $("#canvas");
 var $flipCardElements = $(".flip-card");
-var $cardFaces = $(".flip-card .flip-card-back");
+var $cardSides = $(".flip-card .flip-card-back");
 var $replay = $("#replay-button");
-assignCardFaces($cardFaces);
+var $matchCountDisplay = $("#match-count"); // added a display element to show the match count
+var matchCounter = 0; // added a counter for matched cards
+var totalCards = $flipCardElements.length; // added a variable to store the total number of cards
+assignCardSides($cardSides);
 $playButton.on("click", function() {
   $canvas.removeClass("hidden");
 });
 $canvas.on("click", ".flip-card-front, .flip-card-front h2", function(event) {
   if(event.target != this || locked){ return true; }
   var $card = $(event.target).closest(".flip-card");
-  if (isNotFlipped($card)) {
+  if (notFlipped($card)) {
     $card.addClass("flipped");
     flippedCards.push($card);
   }
   if (flippedCards.length === 2) {
-  score++;
-  if (areMatching(flippedCards)) {
+    if (areMatching(flippedCards)) {
+      matchCounter++; // increment the counter for each matching pair
       matchedCards.push(flippedCards[0], flippedCards[1]);
-  } else {
+      $matchCountDisplay.text(matchCounter); // update the match count display
+      if (matchCounter == (totalCards / 2)) { // check if all cards are matched
+        alert("All cards matched!"); // display the alert
+      }        
+    } else {
       locked = true;
       hideCards(flippedCards);
-  }
-  flippedCards = [];
+    }
+    flippedCards = [];
   }
 });
-var $score = $("#score");
-$score.text("Attempts: " + score);
 $replay.on("click", function() {
-  reset($cardFaces, $flipCardElements);
+  reset($cardSides, $flipCardElements);
+  matchCounter = 0; // reset the counter
+  $matchCountDisplay.text(matchCounter); // reset the match count display
 });
 })
 </script>

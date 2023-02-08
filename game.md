@@ -64,6 +64,11 @@
 .bar-1 {
   margin-left: 10px;
   width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #90fff0;
+  color: #815c20;
+  box-shadow: 0 0 0em #175178;
 }
 .bar-2{
   width: 100px;
@@ -203,7 +208,7 @@ img {
   <div id = "timer">
     <table id="bar">
       <tr>
-        <th><button type="button" class="bar-1">HS</button></th>
+        <th><button type="button" class="bar-1"><span id="match-count"></span></button></th>
         <th><button type="button" class="bar-2">STAR</button></th>
         <th><button type="button" class="bar-3">CS</button></th>
         <th><div id='progressbar'></div></th>
@@ -316,7 +321,7 @@ img {
       document.getElementById("close-game").style.display = "none";
   }
 
-var possibleCardFaces = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
+var possibleCardSides = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
 var flippedCards = [];
 var matchedCards = [];
 var locked = false;
@@ -324,20 +329,20 @@ var flipTimeout = 700;
 function getRandomIndex(length) {
 return Math.floor(Math.random() * length);
 }
-function getRandomFace(randomIndex) {
-var face;
-randomIndex = getRandomIndex(possibleCardFaces.length);
-face = possibleCardFaces[randomIndex];
-possibleCardFaces.splice(randomIndex, 1);
-return face;
+function getRandomSide(randomIndex) {
+var side;
+randomIndex = getRandomIndex(possibleCardSides.length);
+side = possibleCardSides[randomIndex];
+possibleCardSides.splice(randomIndex, 1);
+return side;
 }
-function assignCardFaces($cardFaces) {
+function assignCardSides($cardSides) {
 for (var i = 0; i < 16; i++) {
-  $($cardFaces[i]).html('<img src="' + getRandomFace() + '">');
+  $($cardSides[i]).html('<img src="' + getRandomSide() + '">');
 }
-possibleCardFaces = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
+possibleCardSides = ["{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png", "{{site.baseurl}}/images/aw.png", "{{site.baseurl}}/images/dc.png", "{{site.baseurl}}/images/fp.png", "{{site.baseurl}}/images/gh.png", "{{site.baseurl}}/images/html.png", "{{site.baseurl}}/images/p.png", "{{site.baseurl}}/images/so.png", "{{site.baseurl}}/images/vs.png"];
 }
-function isNotFlipped($card) {
+function unFlipped($card) {
 return !$card.hasClass("flipped");
 }
 function areMatching(flippedCards) {
@@ -350,8 +355,8 @@ setTimeout(function() {
   locked = false;
 }, flipTimeout);
 }
-function reset($cardFaces, $flipCardElements) {
-assignCardFaces($cardFaces);
+function reset($cardSides, $flipCardElements) {
+assignCardSides($cardSides);
 matchedCards = [];
 $flipCardElements.removeClass("flipped");
 }
@@ -359,22 +364,30 @@ $(document).ready(function(){
 var $playButton = $("#play-button");
 var $canvas = $("#canvas");
 var $flipCardElements = $(".flip-card");
-var $cardFaces = $(".flip-card .flip-card-back");
+var $cardSides = $(".flip-card .flip-card-back");
 var $replay = $("#replay-button");
-assignCardFaces($cardFaces);
+var $matchCountDisplay = $("#match-count"); // added a display element to show the match count
+var matchCounter = 0; // added a counter for matched cards
+var totalCards = $flipCardElements.length; // added a variable to store the total number of cards
+assignCardSides($cardSides);
 $playButton.on("click", function() {
   $canvas.removeClass("hidden");
 });
 $canvas.on("click", ".flip-card-front, .flip-card-front h2", function(event) {
   if(event.target != this || locked){ return true; }
   var $card = $(event.target).closest(".flip-card");
-  if (isNotFlipped($card)) {
+  if (unFlipped($card)) {
     $card.addClass("flipped");
     flippedCards.push($card);
   }
   if (flippedCards.length === 2) {
     if (areMatching(flippedCards)) {
+      matchCounter++; // increment the counter for each matching pair
       matchedCards.push(flippedCards[0], flippedCards[1]);
+      $matchCountDisplay.text(matchCounter); // update the match count display
+      if (matchCounter == (totalCards / 2)) { // check if all cards are matched
+        alert("All cards matched!"); // display the alert
+      }        
     } else {
       locked = true;
       hideCards(flippedCards);
@@ -383,7 +396,9 @@ $canvas.on("click", ".flip-card-front, .flip-card-front h2", function(event) {
   }
 });
 $replay.on("click", function() {
-  reset($cardFaces, $flipCardElements);
+  reset($cardSides, $flipCardElements);
+  matchCounter = 0; // reset the counter
+  $matchCountDisplay.text(matchCounter); // reset the match count display
 });
 })
 function createProgressbar(id, duration, callback) {
@@ -400,7 +415,7 @@ function createProgressbar(id, duration, callback) {
 }
 addEventListener('load', function() {
   const container = document.getElementById("game-container");
-  createProgressbar('progressbar', '3s', function() {
+  createProgressbar('progressbar', '30s', function() {
     // add jquery
     container.classList.add("frozen");
     document.getElementById("popup-image").style.display = "block";
