@@ -63,18 +63,28 @@
 }
 .bar-1 {
   margin-left: 10px;
-  width: 100px;
+  width: 150px;
   height: 40px;
   border-radius: 40px;
   background-color: #90fff0;
-  color: #815c20;
-  box-shadow: 0 0 0em #175178;
+  color: #000000;
+  box-shadow: 0 0 0em;
 }
 .bar-2{
-  width: 100px;
+  width: 150px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #ffe100;
+  color: #000000;
+  box-shadow: 0 0 0em;
 }
 .bar-3{
-  width: 100px;
+  width: 150px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: #ff00c8;
+  color: #000000;
+  box-shadow: 0 0 0em;
 }
 #game {
   justify-self: center;
@@ -208,9 +218,9 @@ img {
   <div id = "timer">
     <table id="bar">
       <tr>
-        <th><button type="button" class="bar-1"><span id="match-count"></span></button></th>
+        <th><button type="button" class="bar-1"><span id="match-count">Score</span></button></th>
         <th><button type="button" class="bar-2">STAR</button></th>
-        <th><button type="button" class="bar-3">CS</button></th>
+        <th><button type="button" class="bar-3">HS</button></th>
         <th><div id='progressbar'></div></th>
       </tr>
     </table>
