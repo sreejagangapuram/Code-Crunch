@@ -420,7 +420,7 @@ function createProgressbar(id, duration, callback) {
 }
 addEventListener('load', function() {
   const container = document.getElementById("game-container");
-  createProgressbar('progressbar', '3s', function() {
+  createProgressbar('progressbar', '10s', function() {
     // add jquery
     container.classList.add("frozen");
     document.getElementById("popup-image").style.display = "block";
