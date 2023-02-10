@@ -206,6 +206,7 @@ img {
           - Click "start!" Now a thirty second clock will begin. 
           - Click on a card to turn it over.
           - Match the rest before the time runs out!
+          - Close the game and click play to replay!
       </blockquote>
       <br><button type="button" id="closing-gamestart">Close</button>
   </div>
@@ -215,16 +216,16 @@ img {
   <button type="button" id="play-button">Play</button>
   <button type="button" id="close-game">Close</button>
   <div id="tcontainer">
-  <div id = "timer">
-    <table id="bar">
-      <tr>
-        <th><button type="button" class="bar-1"><span id="match-count">Score</span></button></th>
-        <th><button type="button" class="bar-2">STAR</button></th>
-        <th><button type="button" class="bar-3">HS</button></th>
-        <th><div id='progressbar'></div></th>
-      </tr>
-    </table>
-  </div>
+    <div id = "timer">
+      <table id="bar">
+        <tr>
+          <th><button type="button" class="bar-1"><span id="match-count">Score</span></button></th>
+          <th><button type="button" class="bar-2">STAR</button></th>
+          <th><button type="button" class="bar-3">HS</button></th>
+          <th><div id='progressbar'></div></th>
+        </tr>
+      </table>
+    </div>
   </div>
   <br><div id="game-container">
       <!-- game goes here-->
@@ -375,7 +376,7 @@ var $playButton = $("#play-button");
 var $canvas = $("#canvas");
 var $flipCardElements = $(".flip-card");
 var $cardSides = $(".flip-card .flip-card-back");
-var $replay = $("#replay-button");
+var $replay = $("#close-game");
 var $matchCountDisplay = $("#match-count"); // added a display element to show the match count
 var matchCounter = 0; // added a counter for matched cards
 var totalCards = $flipCardElements.length; // added a variable to store the total number of cards
@@ -405,12 +406,6 @@ $canvas.on("click", ".flip-card-front, .flip-card-front h2", function(event) {
     flippedCards = [];
   }
 });
-$replay.on("click", function() {
-  reset($cardSides, $flipCardElements);
-  matchCounter = 0; // reset the counter
-  $matchCountDisplay.text(matchCounter); // reset the match count display
-});
-})
 function createProgressbar(id, duration, callback) {
   var progressbar = document.getElementById(id);
   progressbar.className = 'progressbar';
@@ -425,11 +420,20 @@ function createProgressbar(id, duration, callback) {
 }
 addEventListener('load', function() {
   const container = document.getElementById("game-container");
-  createProgressbar('progressbar', '30s', function() {
+  createProgressbar('progressbar', '3s', function() {
     // add jquery
     container.classList.add("frozen");
     document.getElementById("popup-image").style.display = "block";
     // or here
   });
 });
+$replay.on("click", function() {
+  const container = document.getElementById("game-container");
+  reset($cardSides, $flipCardElements);
+  matchCounter = 0;
+  $matchCountDisplay.text(matchCounter);
+  container.classList.remove("frozen");
+  document.getElementById("popup-image").style.display = "none";
+});
+})
 </script>
