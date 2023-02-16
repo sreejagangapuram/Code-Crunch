@@ -41,42 +41,41 @@
     let username = $('#login_username').val();
     let email = $('#login_email').val();
     let password = $('#login_password').val();
-    let url = './login.json'; 
+    let url = 'http://localhost:8086/api/users/'; 
     
 
-    const headers = {
-        method: 'GET',
-        mode: 'cors',
-        credentials: 'omit',
-        headers: {'Content-Type': 'application/json'},
-    };
-    try {
-        const response = await fetch(url, headers);
-        if (!response.ok) {
-            throw new Error("Login Failed");
-        }
-        const data = await response.json();
-        const user = data.users.find(user => user.username === username && user.password === password && user.email === email);
-        if (user) {
-            console.log("Login Successful");
-            document.getElementById("navigation").style.visibility = "visible";
-            document.getElementById("lognav").style.visibility = "hidden";
-            localStorage.setItem("userLoggedIn", "true");
-            localStorage.setItem("userid", username);
-            document.getElementById("SignInError").style.display = "none";
-            window.location.href = "{{site.baseurl}}/game";
-            
-        } 
-        else {
-            console.log("Login Failed");
-            localStorage.setItem("userLoggedIn", "false");
-            localStorage.setItem("userid", "null");
-            document.getElementById("SignInError").style.display = "block";
-        }
-    } catch(error) {
-        console.log(error);
-        document.getElementById("SignInError").style.display = "block";
-    }
+const headers = {
+  method: 'GET',
+  mode: 'cors',
+  credentials: 'omit',
+  headers: { 'Content-Type': 'application/json' },
+};
+
+try {
+  const response = await fetch(url, headers);
+  if (!response.ok) {
+    throw new Error('Login Failed');
+  }
+  const data = await response.json();
+  const user = data.find(user => user.username === username && user.password === password && user.email === email);
+  if (user) {
+    console.log('Login Successful');
+    document.getElementById('navigation').style.visibility = 'visible';
+    document.getElementById('lognav').style.visibility = 'hidden';
+    localStorage.setItem('userLoggedIn', 'true');
+    localStorage.setItem('userid', username);
+    document.getElementById('SignInError').style.display = 'none';
+    window.location.href = '{{site.baseurl}}/game';
+  } else {
+    console.log('Login Failed');
+    localStorage.setItem('userLoggedIn', 'false');
+    localStorage.setItem('userid', 'null');
+    document.getElementById('SignInError').style.display = 'block';
+  }
+} catch (error) {
+  console.log(error);
+  document.getElementById('SignInError').style.display = 'block';
+}
 });
 /*
 $('#login_submittion').click(async function() {
