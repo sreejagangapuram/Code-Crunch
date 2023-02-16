@@ -64,10 +64,10 @@
     let result = await response.json();
     console.log('Success:', result);
   if (result.status == "success"){
-    document.getElementById("RegistrationSuccess").style.display = "block";
+    document.getElementById("RegistrationSuccess").style.display = "none";
     document.getElementById("RegistrationError").style.display = "none";
   } else {
-    document.getElementById("RegistrationError").style.display = "block";
+    document.getElementById("RegistrationError").style.display = "none";
     document.getElementById("RegistrationSuccess").style.display = "none";
   }
   } catch (error) {
