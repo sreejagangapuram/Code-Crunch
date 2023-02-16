@@ -424,7 +424,44 @@ addEventListener('load', function() {
     container.classList.add("frozen");
     document.getElementById("popup-image").style.display = "block";
     console.log(matchCounter);
-  });
+    // Get user ID from local storage
+    const userId = localStorage.getItem("userid");
+
+    // Define the endpoint URL
+    const url = "http://localhost:8086/api/leadersfiltered/score";
+
+    // Define the request parameters as an object
+    const data = {
+      username: userId,
+      score: matchCounter
+    };
+
+    // Define the request options
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    };
+
+    // Send the request with fetch()
+    fetch(url, options)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error("There was a problem with the fetch operation:", error);
+      });
+
+        
+    });
 });
 $replay.on("click", function() {
   const container = document.getElementById("game-container");
