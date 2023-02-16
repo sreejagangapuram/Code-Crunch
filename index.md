@@ -44,7 +44,7 @@
     let url = 'http://localhost:8086/api/users/'; 
     
 
-const headers = {
+    const headers = {
   method: 'GET',
   mode: 'cors',
   credentials: 'omit',
