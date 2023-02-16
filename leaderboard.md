@@ -69,10 +69,10 @@
       display: none;
     }
   </style>
-  <form id = "finder">
+  <!-- <form id = "finder">
     <input type="text" id="search" name="searchbar" placeholder="Search">
     <button type="button" id = "search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-  </form>
+  </form> -->
   <h2>Leaderboard</h2>
   <table id="leaderboard">
     <tr>
@@ -80,53 +80,7 @@
       <th>Score</th>
     </tr>
   </table>  
-  <form id = "test">
-    <input type="text" id="usernametesting" name="username bar" placeholder="add username">
-    <input type="text" id="testing" name="testingbar" placeholder="add score">
-    <button type="button" id = "enterbutton">Enter</button>
-  </form>
-  <br><div id = "RegistrationError">
-    <h3><b>ERROR: Registration Failed. Try Again. </b></h3>
-  </div>
-  <div id = "RegistrationSuccess">
-    <h3><b>Registration Successful. </b></h3>
-  </div>
   <script>
-  
-  $("#enterbutton").click(async function() {
-  let form = document.getElementById("test");
-  let formData = new FormData(form);
-  let username = formData.get("username bar");
-  let score = formData.get("testingbar");
-
-  let url = "http://localhost:8086/api/leadersfiltered/score";
-
-  const headers = {
-    'Content-Type': 'application/json',
-  };
-  const body = JSON.stringify({username: username, score: score});
-
-  try {
-    let response = await fetch(url, {
-      mode: 'cors',
-      method: 'POST',
-      headers: headers,
-      body: body
-    });
-    let result = await response.json();
-    console.log('Success:', result);
-    if (result.status == "success") {
-      document.getElementById("RegistrationSuccess").style.display = "block";
-      document.getElementById("RegistrationError").style.display = "none";
-    } else {
-      document.getElementById("RegistrationError").style.display = "block";
-      document.getElementById("RegistrationSuccess").style.display = "none";
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-});
-
     // Update the leaderboard every 5 seconds
     setInterval(updateLeaderboard, 5000);
 
@@ -135,7 +89,7 @@
 
     function updateLeaderboard() {
       $.ajax({
-        url: './leaderboard.json',
+        url: 'http://localhost:8086/api/leadersfiltered/retrieve',
         type: 'GET',
         dataType: 'json',
         success: function(data) {
