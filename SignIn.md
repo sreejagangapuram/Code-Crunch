@@ -76,38 +76,3 @@
 
 });
   </script>
-
-
-  <script>
-    /*$("#registration_submit").click(async function() {
-        let user = document.getElementById("user_id_signup").value;
-        let user_email = document.getElementById("user_email_signup").value;
-        let pass = document.getElementById("user_password_signup").value;
-        let url = "";
-        const headers = {
-            method: 'POST',
-            mode: 'cors',
-            cache: 'default',
-            credentials: 'include',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({username: user, email: user_email,  password: pass}),
-        };
-        try {
-            let response = await fetch(url, headers);
-            let result = await response.json();
-            console.log('Success:', result);
-            if (result.status == "success"){
-                document.getElementById("RegistrationSuccess").style.display = "block";
-                document.getElementById("RegistrationError").style.display = "none";
-            } else {
-                document.getElementById("RegistrationError").style.display = "block";
-                document.getElementById("RegistrationSuccess").style.display = "none";
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });*/
-  </script>
-</html>
