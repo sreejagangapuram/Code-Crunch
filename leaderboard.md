@@ -7,12 +7,13 @@
       border-radius: 0.75em;
       box-shadow: 0 0 0.5em #175178;
       padding: 10px 10px;
+      display: table;
     }
     
     #finder{
       position: absolute;
       top: 235px;
-      left: 58%;
+      left: 49%;
       justify-content: right;
       width: fit-content;
       height: fit-content;
@@ -34,7 +35,7 @@
     ::placeholder{
       color: white; 
     }
-    #search-button{
+    .navigation-button{
       height: 40px;
       width: 40px;
       background-color: #e5b76d;
@@ -42,11 +43,17 @@
       display: inline-block;
       justify-content: center;
       padding: 0px;
-      margin: 10px;
+      margin: 5px;
       font-size: 10pt;
       color: #20323f;
       border-width: 2px;
       box-shadow: 0 0 1em #175178;
+    }
+
+    #return-button{
+      background-color: #368ac2;
+      color: white;
+      border-color: white;
     }
     #RegistrationError{
       text-align: center;
@@ -69,10 +76,11 @@
       display: none;
     }
   </style>
-  <!-- <form id = "finder">
+  <form id = "finder">
     <input type="text" id="search" name="searchbar" placeholder="Search">
-    <button type="button" id = "search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-  </form> -->
+    <button type="button" class = "navigation-button" id = "search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    <button type="button" class = "navigation-button" id = "return-button"><i class="fa-solid fa-right-from-bracket"></i></button>
+  </form>
   <h2>Leaderboard</h2>
   <table id="leaderboard">
     <tr>
