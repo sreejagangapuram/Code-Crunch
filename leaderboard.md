@@ -55,24 +55,8 @@
       color: white;
       border-color: white;
     }
-    #RegistrationError{
-      text-align: center;
-      align-self: center;
-      background-color: rgb(223, 109, 109, 0.60);
-      border-radius: 0.5em;
-      min-height: 25px;
-      width: 100%;
-      line-height: 25px;
-      display: none;
-    }
-    #RegistrationSuccess{
-      text-align: center;
-      align-self: center;
-      background-color: rgb(109, 223, 109, 0.60);
-      border-radius: 0.5em;
-      min-height: 25px;
-      width: 100%;
-      line-height: 25px;
+
+    #score-search, #label-search{
       display: none;
     }
   </style>
@@ -87,14 +71,51 @@
       <th>Username</th>
       <th>Score</th>
     </tr>
+  </table>
+  <table id="score-search">
+    <div id="label-search"><h2>Score Search</h2></div>
+    <tr>
+      <th>Username</th>
+      <th>Score</th>
+    </tr>
   </table>  
   <script>
+      $("#search-button").click(async function() {
+      let username_search = document.getElementById("search").value;
+      let url = "http://localhost:8086/api/leadersfiltered/getuserscoresfiltered";
+
+      const headers = {
+        'Content-Type': 'application/json',
+      };
+      const body = JSON.stringify({username: username_search});
+
+      try {
+        let response = await fetch(url, {
+          mode: 'cors',
+          method: 'POST',
+          headers: headers,
+          body: body
+        });
+        let result = await response.json();
+        console.log('Success:', result);
+        if (result.status == "success") {
+          document.getElementById("leaderboard").style.display = "none";
+          document.getElementById("score-search").style.display = "table";
+          document.getElementById("label-search").style.display = "block";
+        } else {
+          document.getElementById("leaderboard").style.display = "table";
+          document.getElementById("score-search").style.display = "none";
+          document.getElementById("label-search").style.display = "none";
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+    
     // Update the leaderboard every 5 seconds
     setInterval(updateLeaderboard, 5000);
-
     // Retrieve the leaderboard data and create the table when the page is loaded
     updateLeaderboard();
-
     function updateLeaderboard() {
       $.ajax({
         url: 'http://localhost:8086/api/leadersfiltered/retrieve',
