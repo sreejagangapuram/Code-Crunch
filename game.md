@@ -301,7 +301,24 @@ img {
     </section>
   </div><br>
 </div>
-
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Username</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for highscore in highscores %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ highscore.username }}</td>
+      <td>{{ highscore.score }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 <script>
   var howtobutton = document.getElementById("howto-button");
   var closing = document.getElementById("closing-gamestart");
