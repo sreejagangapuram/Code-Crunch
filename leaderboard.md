@@ -60,11 +60,11 @@
       display: none;
     }
   </style>
-  <form id = "finder">
+  <!-- <form id = "finder">
     <input type="text" id="search" name="searchbar" placeholder="Search">
     <button type="button" class = "navigation-button" id = "search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
     <button type="button" class = "navigation-button" id = "return-button"><i class="fa-solid fa-right-from-bracket"></i></button>
-  </form>
+  </form> -->
   <h2>Leaderboard</h2>
   <table id="leaderboard">
     <tr>
@@ -72,45 +72,45 @@
       <th>Score</th>
     </tr>
   </table>
-  <table id="score-search">
+  <!-- <table id="score-search">
     <div id="label-search"><h2>Score Search</h2></div>
     <tr>
       <th>Username</th>
       <th>Score</th>
     </tr>
-  </table>  
+  </table>   -->
   <script>
-      $("#search-button").click(async function() {
-      let username_search = document.getElementById("search").value;
-      let url = "http://localhost:8086/api/leadersfiltered/getuserscoresfiltered";
+    //   $("#search-button").click(async function() {
+    //   let username_search = document.getElementById("search").value;
+    //   let url = "http://localhost:8086/api/leadersfiltered/getuserscoresfiltered";
 
-      const headers = {
-        'Content-Type': 'application/json',
-      };
-      const body = JSON.stringify({username: username_search});
+    //   const headers = {
+    //     'Content-Type': 'application/json',
+    //   };
+    //   const body = JSON.stringify({username: username_search});
 
-      try {
-        let response = await fetch(url, {
-          mode: 'cors',
-          method: 'POST',
-          headers: headers,
-          body: body
-        });
-        let result = await response.json();
-        console.log('Success:', result);
-        if (result.status == "success") {
-          document.getElementById("leaderboard").style.display = "none";
-          document.getElementById("score-search").style.display = "table";
-          document.getElementById("label-search").style.display = "block";
-        } else {
-          document.getElementById("leaderboard").style.display = "table";
-          document.getElementById("score-search").style.display = "none";
-          document.getElementById("label-search").style.display = "none";
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    });
+    //   try {
+    //     let response = await fetch(url, {
+    //       mode: 'cors',
+    //       method: 'POST',
+    //       headers: headers,
+    //       body: body
+    //     });
+    //     let result = await response.json();
+    //     console.log('Success:', result);
+    //     if (result.status == "success") {
+    //       document.getElementById("leaderboard").style.display = "none";
+    //       document.getElementById("score-search").style.display = "table";
+    //       document.getElementById("label-search").style.display = "block";
+    //     } else {
+    //       document.getElementById("leaderboard").style.display = "table";
+    //       document.getElementById("score-search").style.display = "none";
+    //       document.getElementById("label-search").style.display = "none";
+    //     }
+    //   } catch (error) {
+    //     console.error('Error:', error);
+    //   }
+    // });
     
     // Update the leaderboard every 5 seconds
     setInterval(updateLeaderboard, 5000);
