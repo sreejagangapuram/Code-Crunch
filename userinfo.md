@@ -78,6 +78,10 @@
   </style>
 
   <h2>User Info </h2>
-  <h4>Find your personal stats in our game here: </h4>
+  <h3>Find your personal stats in our game here: </h3>
   <br>
-  <h2>Username:  </h2>
+  <br>
+  <h4>User:  </h4>
+  <h4>Top Score:  </h4>
+  <h4>Starred Games:  </h4>
+  <h4>Last 6 games played  </h4>
