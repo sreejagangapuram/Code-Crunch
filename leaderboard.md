@@ -76,11 +76,11 @@
       display: none;
     }
   </style>
-  <form id = "finder">
+  <!-- <form id = "finder">
     <input type="text" id="search" name="searchbar" placeholder="Search">
     <button type="button" class = "navigation-button" id = "search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
     <button type="button" class = "navigation-button" id = "return-button"><i class="fa-solid fa-right-from-bracket"></i></button>
-  </form>
+  </form> -->
   <h2>Leaderboard</h2>
   <table id="leaderboard">
     <tr>
