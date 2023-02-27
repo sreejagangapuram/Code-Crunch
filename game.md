@@ -192,6 +192,15 @@ img {
     background: #F00;
   }
 }
+#highscores{
+  font-family: 'Fira Mono', monospace !important;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 0.75em;
+  box-shadow: 0 0 0.5em #175178;
+  padding: 10px 10px;
+  display: table;
+}
 </style>
 
 <div class="howto-container">
@@ -301,24 +310,12 @@ img {
     </section>
   </div><br>
 </div>
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Username</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for highscore in highscores %}
-    <tr>
-      <td>{{ loop.index }}</td>
-      <td>{{ highscore.username }}</td>
-      <td>{{ highscore.score }}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<table id="highscores">
+  <tr>
+    <th>Username</th>
+    <th>Score</th>
+  </tr>
+</table>  
 <script>
   var howtobutton = document.getElementById("howto-button");
   var closing = document.getElementById("closing-gamestart");
@@ -446,13 +443,18 @@ addEventListener('load', function() {
 
     // Define the endpoint URL
     const url = "https://dncodecrunch.duckdns.org/api/leadersfiltered/score";
+    const url1 = "https://dncodecrunch.duckdns.org/api/highscores/hscore";
 
     // Define the request parameters as an object
     const data = {
       username: userId,
       score: matchCounter
     };
-
+    
+    const data1 = {
+      username: userid,
+      score: matchCounter
+    }
     // Define the request options
     const options = {
       method: "POST",
@@ -461,9 +463,16 @@ addEventListener('load', function() {
       },
       body: JSON.stringify(data)
     };
+    const options1 = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data1)
+    };
 
     // Send the request with fetch()
-    fetch(url, options)
+    fetch(url, options, url1, options1)
       .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -490,4 +499,25 @@ $replay.on("click", function() {
 });
 
 })
+setInterval(updateHighscores, 5000);
+
+updateHighscores();
+
+function updateHighscores() {
+  $.ajax({
+    url1: "https://dncodecrunch.duckdns.org/api/highscores/retrieve",
+    type: 'GET',
+    dataType: 'json',
+    success: function(data1) {
+      $('#highscores tr').slice(1).remove();
+
+      data1.forEach(function(hscore) {
+        $('#highscores').append('<tr><td>' + hscore.username + '</td><td>' + hscore.hscore + '</td></tr>');
+      });
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
+}
 </script>
