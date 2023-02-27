@@ -445,7 +445,7 @@ addEventListener('load', function() {
     const userId = localStorage.getItem("userid");
 
     // Define the endpoint URL
-    const url = "http://localhost:8086/api/leadersfiltered/score";
+    const url = "https://dncodecrunch.duckdns.org/api/leadersfiltered/score";
 
     // Define the request parameters as an object
     const data = {

@@ -41,7 +41,7 @@
     let username = $('#login_username').val();
     let email = $('#login_email').val();
     let password = $('#login_password').val();
-    let url = 'http://localhost:8086/api/users/'; 
+    let url = 'https://dncodecrunch.duckdns.org/api/users/'; 
     
 
     const headers = {

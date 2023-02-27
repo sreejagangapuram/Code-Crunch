@@ -97,7 +97,7 @@
 
     function updateLeaderboard() {
       $.ajax({
-        url: 'http://localhost:8086/api/leadersfiltered/retrieve',
+        url: 'https://dncodecrunch.duckdns.org/api/leadersfiltered/retrieve',
         type: 'GET',
         dataType: 'json',
         success: function(data) {

@@ -47,7 +47,7 @@
     let user = document.getElementById("user_name_signup").value;
     let user_email = document.getElementById("user_email_signup").value;
     let pass = document.getElementById("user_password_signup").value;
-    let url = "http://localhost:8086/api/users/create";
+    let url = "https://dncodecrunch.duckdns.org/api/users/create";
   
     const headers = {
         'Content-Type': 'application/json',
