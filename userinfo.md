@@ -116,7 +116,7 @@
           data.forEach(function(score) {
             $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>'' + score._score6 + </td></tr>');
           });
-        },
+        },`
         error: function(error) {
           console.log(error);
         }
