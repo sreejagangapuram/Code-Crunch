@@ -100,7 +100,7 @@
 userid = localStorage.getItem("userid")
 //updates every 20 seconds
     setInterval(updateScore, 20000);
-//etrieve data/create table
+//retrieve data/create table
     updateScore();
     function retrieveScore() {
       $.ajax({
@@ -112,8 +112,10 @@ userid = localStorage.getItem("userid")
           // clears user table before update
           $('#userinfo tr').slice(1).remove();
 //adds score row
+ // Adds the new scores to the leaderboard from the json data
+          data.forEach(function(score) {
             $('#userinfo').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>'' + score._score6 + </td></tr>');
-          );
+          });
         },
         error: function(error) {
           console.log(error);
