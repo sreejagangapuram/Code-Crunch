@@ -443,7 +443,7 @@ addEventListener('load', function() {
 
     // Define the endpoint URL
     const url = "https://dncodecrunch.duckdns.org/api/leadersfiltered/score";
-    const url1 = "https://dncodecrunch.duckdns.org/api/highscores/hscore";
+//    const url1 = "https://dncodecrunch.duckdns.org/api/highscores/hscore";
     const url2 = "https://dncodecrunch.duckdns.org/api/lastscore/score";
 
     // Define the request parameters as an object
@@ -452,10 +452,10 @@ addEventListener('load', function() {
       score: matchCounter
     };
     
-    const data1 = {
-      username: userid,
-      score: matchCounter
-    }
+//    const data1 = {
+//      username: userid,
+//      score: matchCounter
+//    }
     // Define the request options
     const options = {
       method: "POST",
@@ -464,16 +464,16 @@ addEventListener('load', function() {
       },
       body: JSON.stringify(data)
     };
-    const options1 = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data1)
-    };
+//    const options1 = {
+//      method: "POST",
+//      headers: {
+//        "Content-Type": "application/json"
+//      },
+//      body: JSON.stringify(data1)
+//    };
 
     // Send the request with fetch()
-    fetch(url, options, url1, options1)
+    fetch(url, options)
       .then(response => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
