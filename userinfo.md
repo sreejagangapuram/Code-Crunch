@@ -99,9 +99,9 @@
 //localStorage.getItem("lowScore")
 // userid = localStorage.getItem("userid")
 //updates every 20 seconds
-    setInterval(updateScore, 5000);
+    setInterval(retrieveScore, 5000);
 //retrieve data/create table
-    updateScore();
+    retrieveScore();
     function retrieveScore() {
       $.ajax({
         url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
