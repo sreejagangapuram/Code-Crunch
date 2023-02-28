@@ -84,4 +84,47 @@
   <h4>User:  </h4>
   <h4>Top Score:  </h4>
   <h4>Starred Games:  </h4>
-  <h4>Last 6 games played  </h4>
+  <h2>Last 6 Scores</h2>
+  <table id="lastscore">
+    <tr>
+      <th>Score 1</th>
+      <th>Score 2</th>
+      <th>Score 3</th>
+      <th>Score 4</th>
+      <th>Score 5</th>
+      <th>Score 6</th>
+    </tr>
+  </table>  
+  <script>
+
+<!-- localStorage.getItem("lowScore") -->
+userid = localStorage.getItem("userid")
+
+<!-- updates every 20 seconds -->
+    setInterval(updateScore, 20000);
+
+<!-- retrieve data/create table -->
+    updateScore();
+    
+
+    function retrieveScore() {
+      $.ajax({
+        url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
+        type: 'GET',
+        data: {username: userid}
+        dataType: 'json',
+        success: function(data) {
+          // clears user table before update
+          $('#userinfo tr').slice(1).remove();
+          
+          // adds score row
+            $('#userinfo').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>'' + score._score6 + </td></tr>');
+          );
+        },
+        error: function(error) {
+          console.log(error);
+        }
+      });
+    }
+  </script>
+</html>
