@@ -443,7 +443,7 @@ addEventListener('load', function() {
 
     // Define the endpoint URL
     const url = "https://dncodecrunch.duckdns.org/api/leadersfiltered/score";
-    const url1 = "https://dncodecrunch.duckdns.org/api/highscores/hscore";
+//    const url1 = "https://dncodecrunch.duckdns.org/api/highscores/hscore";
 
     // Define the request parameters as an object
     const data = {
