@@ -1,6 +1,6 @@
 <html>
   <style>
-    #userinfo{
+    #lastscore{
       font-family: 'Fira Mono', monospace !important;
       border-collapse: collapse;
       width: 100%;
@@ -97,9 +97,9 @@
   </table>  
   <script>
 //localStorage.getItem("lowScore")
-userid = localStorage.getItem("userid")
+// userid = localStorage.getItem("userid")
 //updates every 20 seconds
-    setInterval(updateScore, 20000);
+    setInterval(updateScore, 5000);
 //retrieve data/create table
     updateScore();
     function retrieveScore() {
@@ -110,11 +110,11 @@ userid = localStorage.getItem("userid")
         dataType: 'json',
         success: function(data) {
           // clears user table before update
-          $('#userinfo tr').slice(1).remove();
+          $('#lastscore tr').slice(1).remove();
 //adds score row
  // Adds the new scores to the leaderboard from the json data
           data.forEach(function(score) {
-            $('#userinfo').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>'' + score._score6 + </td></tr>');
+            $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>'' + score._score6 + </td></tr>');
           });
         },
         error: function(error) {
