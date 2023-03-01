@@ -112,7 +112,9 @@
         };
       debugger;
       try {
-        let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', headers);
+        
+        //let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', headers);
+        let result = await fetch('https://dncodecrunch.duckdns.org/api/users/', headers);
         let data = await result.json();
           $('#lastscore tr').slice(1).remove();
           //adds score row
