@@ -103,7 +103,30 @@ userid = localStorage.getItem("userid")
 //retrieve data/create table
     retrieveScore();
     function retrieveScore() {
-      $.ajax({
+
+        const headers = {
+          method: 'GET',
+          mode: 'cors',
+          credentials: 'omit',
+          headers: { 'Content-Type': 'application/json' },
+        };
+      debugger;
+      try {
+        let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', headers);
+        let data = await result.json();
+          $('#lastscore tr').slice(1).remove();
+          //adds score row
+          // Adds the new scores to the leaderboard from the json data
+          data.forEach(function(score) {
+            $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
+          });
+
+      } catch(e){
+        console.log(error);
+        debugger;
+      }
+
+      <!-- $.ajax({
         url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
         type: 'GET',
         crossDomain: true,
@@ -122,7 +145,7 @@ userid = localStorage.getItem("userid")
         error: function(error) {
           console.log(error);
         }
-      });
+      }); -->
     }
   </script>
 </html>
