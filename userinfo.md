@@ -106,6 +106,7 @@ userid = localStorage.getItem("userid")
       $.ajax({
         url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
         type: 'GET',
+        crossDomain: true,
         data: {username: userid},
         dataType: 'json',
         success: function(data) {
