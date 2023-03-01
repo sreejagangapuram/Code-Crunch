@@ -126,7 +126,7 @@ userid = localStorage.getItem("userid")
         debugger;
       }
 
-      <!-- $.ajax({
+      /* $.ajax({
         url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
         type: 'GET',
         crossDomain: true,
@@ -145,7 +145,7 @@ userid = localStorage.getItem("userid")
         error: function(error) {
           console.log(error);
         }
-      }); -->
+      }); */
     })()
   </script>
 </html>
