@@ -97,7 +97,7 @@
   </table>  
   <script>
 //localStorage.getItem("lowScore")
-userid = localStorage.getItem("userid")
+  let userid = localStorage.getItem("userid");
 //updates every 20 seconds
     // setInterval(retrieveScore, 5000);
 //retrieve data/create table
