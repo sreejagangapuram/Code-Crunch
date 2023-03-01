@@ -101,8 +101,8 @@ userid = localStorage.getItem("userid")
 //updates every 20 seconds
     setInterval(retrieveScore, 5000);
 //retrieve data/create table
-    retrieveScore();
-    function retrieveScore() {
+    await retrieveScore();
+    (async function retrieveScore() {
 
         const headers = {
           method: 'GET',
@@ -146,6 +146,6 @@ userid = localStorage.getItem("userid")
           console.log(error);
         }
       }); -->
-    }
+    })()
   </script>
 </html>
