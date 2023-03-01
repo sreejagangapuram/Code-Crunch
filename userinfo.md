@@ -97,7 +97,7 @@
   </table>  
   <script>
 //localStorage.getItem("lowScore")
-// userid = localStorage.getItem("userid")
+userid = localStorage.getItem("userid")
 //updates every 20 seconds
     setInterval(retrieveScore, 5000);
 //retrieve data/create table
@@ -106,9 +106,10 @@
       $.ajax({
         url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
         type: 'GET',
-        % data: {username: userid}
+        data: {username: userid}
         dataType: 'json',
         success: function(data) {
+          debugger;
           // clears user table before update
           $('#lastscore tr').slice(1).remove();
 //adds score row

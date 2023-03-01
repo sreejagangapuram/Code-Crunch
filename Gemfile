@@ -14,6 +14,6 @@ gem 'rspec'
 gem "webrick", "~> 1.7"
 
 #delete later
-#group :jekyll_plugins do
-    #gem ‘jekyll-commonmark-ghpages’
-  #end
+group :jekyll_plugins do
+  gem 'jekyll-commonmark-ghpages'
+end
