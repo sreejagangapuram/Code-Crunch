@@ -108,7 +108,7 @@
           data.forEach(function(score) {
             $('#leaderboard').append('<tr><td>' + score.username + '</td><td>' + score.score + '</td></tr>');
           });
-        },`
+        },
         error: function(error) {
           console.log(error);
         }
