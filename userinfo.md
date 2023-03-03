@@ -28,7 +28,7 @@
       height: fit-content;
       background-color: transparent !important;
       border: none;
-      color: white;
+      color: white;  
       box-shadow: 0 0 1em #175178;
     }
 
@@ -98,6 +98,7 @@
   <script>
 //localStorage.getItem("lowScore")
   let userid = localStorage.getItem("userid");
+  console.log(userid)
 //updates every 20 seconds
     // setInterval(retrieveScore, 5000);
 //retrieve data/create table
@@ -112,7 +113,7 @@
         };
       debugger;
       try {
-        let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve/', headers);
+        let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', headers);
         let data = await result.json();
           $('#lastscore tr').slice(1).remove();
           //adds score row
