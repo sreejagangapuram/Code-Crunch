@@ -98,7 +98,6 @@
   <script>
 //localStorage.getItem("lowScore")
   let userid = localStorage.getItem("userid");
-  console.log(userid)
 //updates every 20 seconds
     // setInterval(retrieveScore, 5000);
 //retrieve data/create table
@@ -115,10 +114,12 @@
       try {
         let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', headers);
         let data = await result.json();
+          console.log(data);
           $('#lastscore tr').slice(1).remove();
           //adds score row
           // Adds the new scores to the leaderboard from the json data
           data.forEach(function(score) {
+            console.log(score);
             $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
           });
 
