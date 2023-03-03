@@ -106,14 +106,14 @@
       $.ajax({
         url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
         type: 'GET',
-        data: {"_username": "ekam"},
+        data: {"username": "ekam"},
         dataType: 'json',
         success: function(response) {
           // Clear the current lastscore on update
           $('#lastscore tr').slice(1).remove();
           // Adds the new scores to the lastscore from the json response
           response.forEach(function(score) {
-             $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
+             $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>'); 
           });
         },
         error: function(error) {
