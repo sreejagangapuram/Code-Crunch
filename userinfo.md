@@ -98,68 +98,17 @@
   <script>
 //localStorage.getItem("lowScore")
   let userid = localStorage.getItem("userid");
-
-//updates every 20 seconds
-    // setInterval(retrieveScore, 5000);
-//retrieve data/create table
-    // await retrieveScore();
-     (async function retrieveScore() {
-
-    //     const headers = {
-    //       method: 'GET',
-    //       mode: 'cors',
-    //       credentials: 'omit',
-    //       headers: { 'Content-Type': 'application/json' },
-    //     };
-    //   debugger;
-
        try {
         const user_url = {{ url_for("https://dncodecrunch.duckdns.org/api/lastscore/retrieve", _username="ekam")|tojson }}
         fetch(user_url)
           .then(response => response.json())
           .then(scores => {
-             $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
+             $('lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
            });
         } catch(e){
          console.log(e);
         }
 
-        // let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', data={"_username":"ekam"});
-         let data = await result.json();
-           console.log(data);
-           $('#lastscore tr').slice(1).remove();
-           //adds score row
-           // Adds the new scores to the leaderboard from the json data
-           // data.forEach(function(score) {
-          // console.log(score);
-            // $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
-          // });
 
-      // } catch(e){
-        // console.log(error);
-        // debugger;
-      // }
-
-      <!-- /* $.ajax({
-        url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
-        type: 'GET',
-        crossDomain: true,
-        data: {username: userid},
-        dataType: 'json',
-        success: function(data) {
-          debugger;
-          // clears user table before update
-          $('#lastscore tr').slice(1).remove();
-//adds score row
- // Adds the new scores to the leaderboard from the json data
-          data.forEach(function(score) {
-            $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
-          });
-        },
-        error: function(error) {
-          console.log(error);
-        }
-      }); */ -->
-    })()
   </script>
 </html>
