@@ -459,6 +459,33 @@ addEventListener('load', function() {
     };
 
     // Send the request with fetch()
+    fetch(url, options)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        return fetch(url1, options1);
+      })
+      .then(response1 => {
+        if (!response1.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response1.json();
+      })
+      .then(data1 => {
+        console.log(data1);
+      })
+      .catch(error => {
+        console.error("There was a problem with the fetch operation:", error);
+      });        
+    });
+});
+
+ // Send the request with fetch() for lastscore.py
     fetch(url2, options)
     .then(response => {
       if (!response.ok) {
