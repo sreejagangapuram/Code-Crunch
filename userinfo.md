@@ -104,15 +104,15 @@
     // await retrieveScore();
     (async function retrieveScore() {
 
-        const headers = {
+        <!-- const headers = {
           method: 'GET',
           mode: 'cors',
           credentials: 'omit',
           headers: { 'Content-Type': 'application/json' },
         };
-      debugger;
+      debugger; -->
       try {
-        let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', headers);
+        let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', json={"username":"ekam"});
         let data = await result.json();
           console.log(data);
           $('#lastscore tr').slice(1).remove();
