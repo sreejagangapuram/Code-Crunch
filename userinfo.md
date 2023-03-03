@@ -119,7 +119,7 @@
           .then(response => response.json())
           .then(scores => {
              $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
-           };
+           });
         } catch(e){
          console.log(e);
         }
