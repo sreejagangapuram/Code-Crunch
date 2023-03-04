@@ -132,7 +132,10 @@
   };
   let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
     method: 'POST',
-    headers: headers,
+    headers: {
+      'Access-Control-Request-Method': 'GET',
+      'Origin': 'https://sreejagangapuram.github.io/Code-Crunch/userinfo'
+    }
     body: JSON.stringify({ username: 'ekam' })
   });
   let data = await result.json();
