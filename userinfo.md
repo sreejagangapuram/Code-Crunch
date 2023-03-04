@@ -98,55 +98,55 @@
   <script>
 //localStorage.getItem("lowScore")
   let userid = localStorage.getItem("userid");
-    // Update the lastscore every 5 seconds
-    setInterval(updateScore, 5000);
-    // Retrieve the lastscore data and create the table when the page is loaded
-    updateScore();
-    function updateScore() {
-      $.ajax({
-        url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
-        type: 'GET',
-        data: {"username": "ekam"},
-        dataType: 'json',
-        success: function(response) {
-          // Clear the current lastscore on update
-          $('#lastscore tr').slice(1).remove();
-          // Adds the new scores to the lastscore from the json response
-          response.forEach(function(score) {
-             $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>'); 
-          });
-        },
-        error: function(error) {
-          console.log(error);
-        }
-      });
-    }
-
-     <!-- await retrieveScore();
-     (async function retrieveScore() {
-         const headers = {
-          method: ‘GET’,
-          mode: ‘cors’,
-          credentials: ‘omit’,
-          headers: { ‘Content-Type’: ‘application/json’ },
-        };
- 
-      let result = await fetch(‘https://dncodecrunch.duckdns.org/api/lastscore/retrieve’, data={“_username”:“ekam”});
-      let data = await result.json();
-          console.log(data);
-          $(‘#lastscore tr’).slice(1).remove();
-          //adds score row
-          //Adds the new scores to the leaderboard from the json data
-           data.forEach(function(score) {
-           console.log(score);
-             $(‘#lastscore’).append(‘<tr><td>’ + score._score1 + ‘</td><td>’ + score._score2 + ‘</td><td>’ + score._score3 + ‘</td><td>’ + score._score4 + ‘</td><td>’ + score._score5 + ‘</td><td>’ + score._score6 + ‘</td></tr>’);
-           }); -->
-
-
-
-
-
-
+    // // Update the lastscore every 5 seconds
+    // setInterval(updateScore, 5000);
+    // // Retrieve the lastscore data and create the table when the page is loaded
+    // updateScore();
+    // function updateScore() {
+    //   $.ajax({
+    //     url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
+    //     type: 'GET',
+    //     data: {"username": "ekam"},
+    //     dataType: 'json',
+    //     success: function(response) {
+    //       // Clear the current lastscore on update
+    //       $('#lastscore tr').slice(1).remove();
+    //       // Adds the new scores to the lastscore from the json response
+    //       response.forEach(function(score) {
+    //          $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>'); 
+    //       });
+    //     },
+    //     error: function(error) {
+    //       console.log(error);
+    //     }
+    //   });
+    // }
+// Update the lastscore every 5 seconds
+setInterval(retrieveScore, 5000);
+// Retrieve the lastscore data and create the table when the page is loaded
+retrieveScore();
+(async function retrieveScore() {
+  const headers = {
+    method: 'GET',
+    mode: 'cors',
+    credentials: 'omit',
+    headers: { 'Content-Type': 'application/json' },
+  };
+  let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({ username: 'ekam' })
+  });
+  let data = await result.json();
+  console.log(data);
+  $('#lastscore tr').slice(1).remove();
+  % // Adds score row
+  % // Adds the new scores to the latestscore from the json data
+  data.forEach(function (score) {
+    console.log(score);
+    $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
+  });
+})();
 
   </script>
 </html>
