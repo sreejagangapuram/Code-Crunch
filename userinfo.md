@@ -140,8 +140,6 @@ retrieveScore();
   let data = await result.json();
   console.log(data);
   $('#lastscore tr').slice(1).remove();
-  % // Adds score row
-  % // Adds the new scores to the latestscore from the json data
   data.forEach(function (score) {
     console.log(score);
     $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
