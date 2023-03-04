@@ -127,7 +127,6 @@ async function retrieveScore() {
   const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Method': 'GET',
-    'Origin': 'https://sreejagangapuram.github.io'
   };
   const params = {
     username: 'ekam'
