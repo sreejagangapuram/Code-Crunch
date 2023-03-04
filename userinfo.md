@@ -123,31 +123,30 @@
     // }
 // Update the lastscore every 5 seconds
 // Retrieve the lastscore data and create the table when the page is loaded
-(async function retrieveScore() {
+async function retrieveScore() {
   const headers = {
-    method: 'GET',
-    mode: 'cors',
-    credentials: 'omit',
-    headers: { 'Content-Type': 'application/json' },
+    'Content-Type': 'application/json',
+    'Access-Control-Request-Method': 'GET',
+    'Origin': 'https://sreejagangapuram.github.io'
   };
-  let result = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
-    method: 'POST',
-    headers: {
-      'Access-Control-Request-Method': 'GET',
-      'Origin': 'https://sreejagangapuram.github.io/Code-Crunch/userinfo'
-    }
-    body: JSON.stringify({ username: 'ekam' })
+  const params = {
+    username: 'ekam'
+  }
+  const url = 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve?' + new URLSearchParams(params);
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: headers
   });
-  let data = await result.json();
+  const data = await response.json();
   console.log(data);
   $('#lastscore tr').slice(1).remove();
   data.forEach(function (score) {
     console.log(score);
     $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
   });
-})();
+}
 setInterval(retrieveScore, 5000);
 retrieveScore();
 
-  </script>
+</script>
 </html>
