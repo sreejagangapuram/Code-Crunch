@@ -123,27 +123,35 @@
     // }
 // Update the lastscore every 5 seconds
 // Retrieve the lastscore data and create the table when the page is loaded
-async function retrieveScore() {
-  const headers = {
-    'Content-Type': 'application/json',
-    'Access-Control-Request-Method': 'GET',
-    method: 'GET',
-  };
-  const params = {
-    username: 'ekam'
-  };
-  const url = 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve?' + new URLSearchParams(params);
-  const response = await fetch(url, headers);
-  const data = await response.json();
-  console.log(data);
-  $('#lastscore tr').slice(1).remove();
-  data.forEach(function (score) {
-    console.log(score);
-    $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
-  });
-}
-setInterval(retrieveScore, 5000);
-retrieveScore();
+try {
+fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
+   'method': 'POST' ,
+   'headers' : {'Content-Type': 'application/json'},
+   'body': JSON.stringify({'username':userid}),
+})
+   .then(response => response.json())
+   .then(data => {
+console.log(data);
+$('#lastscore tr').slice(1).remove();
+//adds score row
+// Adds the new scores to the leaderboard from the json data
+$('#lastscore').append('<tr style="text-align:center"><td>'
+      + data.score1 + '</td><td>'
+      + data.score2 + '</td><td>'
+      + data.score3 + '</td><td>'
+      + data.score4 + '</td><td>'
+      + data.score5 + '</td><td>'
+      + data.score6 + '</td><td>'
+     );
+$('#User').append(userid);
+$('#TopScore').append(Object.values(data).reduce((max,score) => score > max? score : max));
+
+   });
+
+    } catch(e){
+        console.log(error);
+        debugger;
+    }
 
 </script>
 </html>
