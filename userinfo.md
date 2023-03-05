@@ -102,6 +102,7 @@ try {
 fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
    'method': 'POST' ,
    'headers' : {'Content-Type': 'application/json'},
+   'mode': 'cors',
    'body': JSON.stringify({'username':userid}),
 })
    .then(response => response.json())

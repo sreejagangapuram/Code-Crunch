@@ -47,7 +47,7 @@
     const headers = {
   method: 'GET',
   mode: 'cors',
-  credentials: 'omit',
+  // credentials: 'omit',
   headers: { 'Content-Type': 'application/json' },
 };
 
