@@ -77,12 +77,12 @@
     }
   </style>
 
-  <h2>User Info </h2>
+  <h2 id='User'> User Info </h2>
   <h3>Find your personal stats in our game here: </h3>
   <br>
   <br>
   <h4>User:  </h4>
-  <h4>Top Score:  </h4>
+  <h4 id='TopScore'>Top Score:  </h4>
   <h4>Starred Games:  </h4>
   <h2>Last 6 Scores</h2>
   <table id="lastscore">
@@ -96,38 +96,13 @@
     </tr>
   </table>  
   <script>
-//localStorage.getItem("lowScore")
-  let userid = localStorage.getItem("userid");
-    // // Update the lastscore every 5 seconds
-    // setInterval(updateScore, 5000);
-    // // Retrieve the lastscore data and create the table when the page is loaded
-    // updateScore();
-    // function updateScore() {
-    //   $.ajax({
-    //     url: 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve',
-    //     type: 'GET',
-    //     data: {"username": "ekam"},
-    //     dataType: 'json',
-    //     success: function(response) {
-    //       // Clear the current lastscore on update
-    //       $('#lastscore tr').slice(1).remove();
-    //       // Adds the new scores to the lastscore from the json response
-    //       response.forEach(function(score) {
-    //          $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>'); 
-    //       });
-    //     },
-    //     error: function(error) {
-    //       console.log(error);
-    //     }
-    //   });
-    // }
-// Update the lastscore every 5 seconds
-// Retrieve the lastscore data and create the table when the page is loaded
+// let userid = localStorage.getItem("userid");
+let userid = 'ekam'
 try {
 fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
    'method': 'POST' ,
    'headers' : {'Content-Type': 'application/json'},
-   'body': JSON.stringify({'username':'ekam'}),
+   'body': JSON.stringify({'username':userid}),
 })
    .then(response => response.json())
    .then(data => {
