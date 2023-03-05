@@ -127,14 +127,11 @@ async function retrieveScore() {
   const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Method': 'GET',
+    method: 'GET',
   };
   const params = {
     username: 'ekam'
   };
-  const headers = {
-    method: 'GET',
-    headers: headers
-  }; 
   const url = 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve?' + new URLSearchParams(params);
   const response = await fetch(url, headers);
   const data = await response.json();
