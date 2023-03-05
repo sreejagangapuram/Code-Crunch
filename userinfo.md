@@ -123,16 +123,16 @@
     // }
 // Update the lastscore every 5 seconds
 // Retrieve the lastscore data and create the table when the page is loaded
-async function getUserScore() {
+async function retrieveScore() {
   const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Method': 'GET',
-    'method': 'GET',
+    method: 'GET',
   };
   const params = {
-    'username': 'ekam'
+    username: 'ekam'
   };
-  const url = 'https://dncodecrunch.duckdns.org/api/lastscore/getuserscoresfiltered?' + new URLSearchParams(params);
+  const url = 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve?' + new URLSearchParams(params);
   const response = await fetch(url, headers);
   const data = await response.json();
   console.log(data);
@@ -142,8 +142,8 @@ async function getUserScore() {
     $('#lastscore').append('<tr><td>' + score._score1 + '</td><td>' + score._score2 + '</td><td>' + score._score3 + '</td><td>' + score._score4 + '</td><td>' + score._score5 + '</td><td>' + score._score6 + '</td></tr>');
   });
 }
-setInterval(getUserScore, 5000);
-getUserScore();
+setInterval(retrieveScore, 5000);
+retrieveScore();
 
 </script>
 </html>
