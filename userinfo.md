@@ -128,11 +128,11 @@ async function retrieveScore() {
     'Content-Type': 'application/json',
     'Access-Control-Request-Method': 'GET',
   };
-  const params = {
-    username: 'ekam'
-  }
-  const url = 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve?' + new URLSearchParams(params);
-  const response = await fetch(url, {
+  // const params = {
+  //   username: 'ekam'
+  // }
+  // const url = 'https://dncodecrunch.duckdns.org/api/lastscore/retrieve?' + new URLSearchParams(params);
+  const response = await fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
     method: 'GET',
     headers: headers
   });
