@@ -127,10 +127,10 @@ async function getUserScore() {
   const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Request-Method': 'GET',
-    method: 'GET',
+    'method': 'GET',
   };
   const params = {
-    username: 'ekam'
+    'username': 'ekam'
   };
   const url = 'https://dncodecrunch.duckdns.org/api/lastscore/getuserscoresfiltered?' + new URLSearchParams(params);
   const response = await fetch(url, headers);
