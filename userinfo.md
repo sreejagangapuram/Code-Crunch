@@ -103,8 +103,7 @@ try {
   // fetch('http://127.0.0.1:8080/api/lastscore/retrieve', {  
     'method': 'POST' ,
     'headers' : {'Content-Type': 'application/json'},
-    'Access-Control-Allow-Origin': 'https://dncodecrunch.duckdns.org'
-  // 'mode': 'cors',
+    'Access-Control-Allow-Origin': 'https://dncodecrunch.duckdns.org',
     'body': JSON.stringify({'username':userid}),
   })
    .then(response => response.json())
