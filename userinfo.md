@@ -99,12 +99,14 @@
 // let userid = localStorage.getItem("userid");
 let userid = 'ekam'
 try {
-fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
-   'method': 'POST' ,
-   'headers' : {'Content-Type': 'application/json'},
-   'mode': 'cors',
-   'body': JSON.stringify({'username':userid}),
-})
+  fetch('https://dncodecrunch.duckdns.org/api/lastscore/retrieve', {
+  // fetch('http://127.0.0.1:8080/api/lastscore/retrieve', {  
+    'method': 'POST' ,
+    'headers' : {'Content-Type': 'application/json'},
+    'Access-Control-Allow-Origin': 'https://dncodecrunch.duckdns.org'
+  // 'mode': 'cors',
+    'body': JSON.stringify({'username':userid}),
+  })
    .then(response => response.json())
    .then(data => {
 console.log(data);
