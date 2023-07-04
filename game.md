@@ -192,7 +192,6 @@ img {
     background: #F00;
   }
 }
-
 </style>
 
 <div class="howto-container">
@@ -302,6 +301,7 @@ img {
     </section>
   </div><br>
 </div>
+
 <script>
   var howtobutton = document.getElementById("howto-button");
   var closing = document.getElementById("closing-gamestart");
@@ -428,20 +428,14 @@ addEventListener('load', function() {
     const userId = localStorage.getItem("userid");
 
     // Define the endpoint URL
-    const url = "https://dncodecrunch.duckdns.org/api/leadersfiltered/score";
-    const url1 = "https://dncodecrunch.duckdns.org/api/highscores/hscore";
-    const url2 = "https://dncodecrunch.duckdns.org/api/lastscore/score";
+    const url = "http://localhost:8086/api/leadersfiltered/score";
 
     // Define the request parameters as an object
     const data = {
       username: userId,
       score: matchCounter
     };
-    
-    const data1 = {
-      username: userid,
-      hscore: matchCounter
-    }
+
     // Define the request options
     const options = {
       method: "POST",
@@ -450,65 +444,21 @@ addEventListener('load', function() {
       },
       body: JSON.stringify(data)
     };
-    const options1 = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data1)
-    };
 
     // Send the request with fetch()
     fetch(url, options)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
         return response.json();
       })
       .then(data => {
         console.log(data);
-        return fetch(url1, options1);
-      })
-      .then(response1 => {
-        if (!response1.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response1.json();
-      })
-      .then(data1 => {
-        console.log(data1);
       })
       .catch(error => {
         console.error("There was a problem with the fetch operation:", error);
-      });        
-    });
-});
-
- // Send the request with fetch() for lastscore.py
-    fetch(url2, options)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
-        return fetch(url1, options1);
-      })
-      .then(response1 => {
-        if (!response1.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response1.json();
-      })
-      .then(data1 => {
-        console.log(data1);
-      })
-      .catch(error => {
-        console.error("There was a problem with the fetch operation:", error);
-      });        
+      });
     });
 });
 $replay.on("click", function() {
